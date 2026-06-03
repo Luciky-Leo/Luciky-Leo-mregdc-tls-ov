@@ -29,6 +29,21 @@ Suggested repository:
 4. Commit all files.
 5. Publish to `Luciky-Leo/mregdc-tls-ovc`.
 
+## Option C: command line after creating the empty GitHub repository
+
+This local folder is already initialized as a git repository and has the remote configured:
+
+```bash
+git remote -v
+git push -u origin main
+```
+
+Use this only after creating the empty repository at:
+
+```text
+https://github.com/Luciky-Leo/mregdc-tls-ovc
+```
+
 ## Zenodo DOI
 
 After the GitHub repository is public:
