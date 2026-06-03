@@ -8,7 +8,11 @@ Target journal: *Journal of Translational Medicine*.
 
 ## Repository scope
 
-This repository is intended to support peer review and archival code availability. It contains:
+This repository is intended to support peer review and archival code availability. It is available at:
+
+https://github.com/Luciky-Leo/Luciky-Leo-mregdc-tls-ov
+
+It contains:
 
 - `code/`: package-building, figure-compression, TCGA-OV clinical-covariate retrieval, adjusted Cox sensitivity analysis, and Supplementary Table S3 accession scripts.
 - `source_data/`: current-numbering source-data folders for Fig. 1-Fig. 11 and Supplementary Figures S1-S6.
