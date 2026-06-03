@@ -1,0 +1,7 @@
+"covariate","non_missing_n","model_patients_n","non_missing_fraction","unique_non_missing_values"
+"age_years",426,426,1,"78; 70; 85; 72; 81; 44; 46; 62; 57; 59; 61; 87"
+"stage_clean",423,426,0.992957746478873,"III; IV; II; I"
+"advanced_stage_III_IV",423,426,0.992957746478873,"1; 0"
+"grade_clean",424,426,0.995305164319249,"G3; G2; GX; G4; GB; G1"
+"high_grade_G3_G4_GB",418,426,0.981220657276995,"1; 0"
+"residual_disease_clean",14,426,0.0328638497652582,"R1; RX; R0; R2"

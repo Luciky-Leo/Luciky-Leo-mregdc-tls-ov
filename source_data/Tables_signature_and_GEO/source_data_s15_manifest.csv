@@ -1,0 +1,12 @@
+file,rows,columns,description
+signature_definitions.csv,14,6.0,signature definitions
+multi_sample_spatial_gene_coverage_reconciled.csv,138,11.0,multi sample spatial gene coverage reconciled
+multi_sample_spatial_gene_coverage_dataset_summary.csv,30,6.0,multi sample spatial gene coverage dataset summary
+multi_sample_spatial_marker_availability_extended.csv,480,10.0,multi sample spatial marker availability extended
+multi_sample_spatial_marker_availability_summary.csv,120,5.0,multi sample spatial marker availability summary
+xenium_program_gene_availability.csv,11,5.0,xenium program gene availability
+tcga_xenium_signature_availability_legacy.tsv,28,6.0,tcga xenium signature availability legacy.tsv
+signature_label_crosswalk.csv,4,4.0,signature label crosswalk
+Supplementary_Table_S2_signature_definitions_and_gene_coverage.xlsx,825,,Excel workbook containing all SourceData S15 tables
+Supplementary_Table_S3_spatial_and_10x_dataset_accessions.csv,25,11.0,public spatial and 10x dataset accession/source table
+Supplementary_Table_S3_spatial_and_10x_dataset_accessions.xlsx,25,,Excel workbook for Supplementary Table S3

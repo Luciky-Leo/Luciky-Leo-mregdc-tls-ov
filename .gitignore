@@ -1,0 +1,41 @@
+# LaTeX build products
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.xdv
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Local caches
+__pycache__/
+.pytest_cache/
+.ipynb_checkpoints/
+.Rhistory
+.RData
+.Rproj.user/
+
+# OS/editor files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Large local-only raw data
+raw_data/
+intermediate/
+tmp/
+*.h5ad
+*.h5
+*.rds
+*.loom
+*.bam
+*.fastq
+*.fastq.gz
+*.fq.gz
+
+# Keep final compact source data and review figures tracked.
+!source_data/
+!figures_for_review/

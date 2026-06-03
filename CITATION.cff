@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+title: "MregDC-TLS ovarian cancer reproducibility package"
+message: "If you use this repository, please cite the archived release DOI and the associated manuscript."
+type: software
+authors:
+  - family-names: Lu
+    given-names: Feifan
+  - family-names: Zhang
+    given-names: Ting
+  - family-names: Guan
+    given-names: Rui
+  - family-names: Xu
+    given-names: Mingjuan
+year: 2026
+license: MIT
+repository-code: "https://github.com/Luciky-Leo/mregdc-tls-ovc"
+abstract: "Reviewer-facing code and source-data package for a study of TLS-associated LAMP3+CCR7+ mregDC states in ovarian cancer."

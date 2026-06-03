@@ -1,0 +1,13 @@
+component,scope,relative_or_project_path,status,notes
+manuscript_package_build,LaTeX package assembly,code/build_jtm_submission_package.py,included,Builds the JTM Springer Nature package and copies figures/source data.
+figure_upload_compression,review-upload figure compression,code/create_jtm_compressed_figures.py,included,Creates <10 MB review/upload figure PDFs without overwriting production figures.
+tcga_ov_clinical_fetch,GDC clinical covariate retrieval,code/fetch_tcga_ov_clinical_for_adjusted_cox.py,included,Fetches TCGA-OV age/stage/grade/residual-disease fields from the GDC API and merges them with the Fig9 model cohort.
+adjusted_cox_sensitivity,age/stage/grade Cox sensitivity,code/run_adjusted_cox_sensitivity.R,included,Runs risk-score-only and age/stage/grade-adjusted Cox sensitivity models; residual disease is audited but excluded because of sparse reporting.
+supplementary_table_s3,public spatial and 10x dataset accessions,code/make_supplementary_table_s3_dataset_accessions.py,included,Builds Supplementary Table S3 from the 23-sample spatial source table and public 10x dataset metadata.
+supplementary_figure_revision,S1-S3 supplementary figure redraw,E:/Reserch/MregDC/supplementary_figure_revision_20260601,available_locally,Contains Python scripts used for revised supplementary spatial figures.
+xenium_tls_segmentation,Fig4 and Fig6 spatial TLS segmentation/gradients,E:/Reserch/MregDC/science_tls_style_rebuild_20260530/04_new_fig_order_document/Scripts_and_SourceData,available_locally,Includes 01_xenium_tls_field_segmentation.py and 02_draw_science_style_panels.R plus source tables.
+science_tls_redraw,Science TLS style redraw layer,E:/Reserch/MregDC/science_tls_atlas_style_redraw_final_20260530/04_scripts,available_locally,Contains the R redraw scripts used during Science TLS atlas style porting.
+multi_sample_spatial,23-sample spatial extension,E:/Reserch/MregDC/analysis_rebuild_20260520/22_yzgc_spatial_extended_20260528,available_locally,Contains R scripts and panel manifests for multi-sample spatial support.
+fig5_8_original_r_panels,early Fig5-Fig8 source panels and QC,E:/Reserch/MregDC/analysis_rebuild_20260520/11_main_fig5_8_R_20260523,available_locally,Contains QC tables for immune, patient, and perturbation panels.
+celloracle_full_method,CellOracle environment and outputs,E:/Reserch/MregDC/analysis_rebuild_20260520/16_full_method_integration_20260527,available_locally,Method-specific environment and outputs retained locally; public repository DOI still needed.
+public_repository,public archival code URL,not_yet_deposited,pending,Must be replaced with a GitHub/Zenodo DOI or reviewer link before final upload if possible.

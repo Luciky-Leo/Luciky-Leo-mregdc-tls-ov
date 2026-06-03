@@ -1,0 +1,11 @@
+item	value
+xenium_h5	E:\Reserch\MregDC\analysis_rebuild_20260520\01_data\raw\spatial\Xenium_Prime_Ovarian_Cancer_FFPE_XRrun_outs\cell_feature_matrix.h5
+cells_csv	E:\Reserch\MregDC\analysis_rebuild_20260520\01_data\raw\spatial\Xenium_Prime_Ovarian_Cancer_FFPE_XRrun_outs\cells.csv.gz
+signature_availability	E:\Reserch\MregDC\analysis_rebuild_20260520\12_TLS_drug_fig5_9_R_20260523\02_tables\tls_signature_availability.tsv
+requested_genes	75
+present_genes	1500
+selected_cells	60000
+nonzero_entries	8763029
+sampling_seed	20260525
+sampling_rule	deterministic random subset capped at 60000 cells from Xenium cells with coordinates
+gene_selection_rule	curated TLS/mregDC/AP genes plus top detected Xenium genes capped at 1500

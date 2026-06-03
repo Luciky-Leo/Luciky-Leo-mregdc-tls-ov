@@ -1,0 +1,8 @@
+item	value
+h5ad_path	E:\Reserch\MregDC\analysis_rebuild_20260520\15_supplementary_cns_methods_20260525\02_inputs\xenium_hotspot_60k_1500genes.h5ad
+cells	60000
+genes	1500
+nonzero_entries	8763029
+latent_key	spatial
+layer_key	counts
+umi_counts_key	total_counts

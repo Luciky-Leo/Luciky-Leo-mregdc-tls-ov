@@ -1,0 +1,6 @@
+control,available_n,definition
+Immune_context_control,427,z-mean of ESTIMATE/xCell/IPS immune context fields available per patient
+Tumor_purity_control,427,ESTIMATE tumor purity
+B_cell_control,427,z-mean of B lineage estimates across immune-deconvolution methods
+T_cell_control,427,z-mean of T lineage estimates across immune-deconvolution methods
+Myeloid_APC_control,427,z-mean of dendritic/macrophage/APC-related estimates across methods

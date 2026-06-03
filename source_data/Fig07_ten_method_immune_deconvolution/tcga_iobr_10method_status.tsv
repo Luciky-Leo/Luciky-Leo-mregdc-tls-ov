@@ -1,0 +1,11 @@
+method_label	method	ok	n_features	error
+quanTIseq	quantiseq	TRUE	12	
+TIMER	timer	FALSE	0	cannot open the connection
+CIBERSORT	cibersort	TRUE	26	
+CIBERSORT_ABS	cibersort_abs	TRUE	27	
+MCPcounter	mcpcounter	TRUE	11	
+xCell	xcell	TRUE	68	
+EPIC	epic	TRUE	9	
+ESTIMATE	estimate	TRUE	5	
+IPS	ips	TRUE	8	
+ConsensusTME	mean_z_APC_global_successful_IOBR_methods	TRUE	8	

@@ -1,0 +1,5 @@
+"disease_group","disease_full_name","n_samples"
+"CEAD/ADC","cervical adenocarcinoma",6
+"CESC/CSCC","cervical squamous cell carcinoma",5
+"OVC","ovarian cancer",5
+"UCEC/EC","uterine corpus endometrial carcinoma / endometrial cancer",6

@@ -1,0 +1,5 @@
+legacy_label,standardized_label,context,note
+TLS_29_imprint,TLS_29_imprint_patient,TCGA/patient-level availability table,Canonical 29-gene imprint.
+TLS_29_imprint,TLS_spatial_imprint_overlap,multi-sample spatial coverage table,Expression-overlap TLS imprint used by broad spatial scoring scripts.
+AP_MHCII,AP_MHCII_proxy,spatial/TCGA/Xenium,Dataset-specific available-gene AP/MHC-II proxy.
+mregDC,mregDC_extended,multi-sample spatial,Extended mature migratory/regulatory DC program.

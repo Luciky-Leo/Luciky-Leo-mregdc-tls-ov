@@ -1,0 +1,8 @@
+item	value
+method	Hotspot
+hotspotsc_version	1.1.3
+cells	60000
+genes	1500
+fdr_lt_0_05_genes	1269
+module_status	skipped_local_correlation_step_too_slow_for_1269_fdr_genes
+source_path	E:\Reserch\Skills\cns_bioinfo_methods_database\03_source_code_repositories\yoseflab_hotspot

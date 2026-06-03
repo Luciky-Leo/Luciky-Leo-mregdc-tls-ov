@@ -1,0 +1,8 @@
+covariate,non_missing_n,model_patients_n,non_missing_fraction
+age_at_index_years,426,426,1.0
+age_at_diagnosis_years,418,426,0.9812206572769953
+tumor_stage,0,426,0.0
+tumor_grade,424,426,0.9953051643192489
+figo_stage,423,426,0.9929577464788732
+residual_disease,14,426,0.03286384976525822
+year_of_diagnosis,426,426,1.0

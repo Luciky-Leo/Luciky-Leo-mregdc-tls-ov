@@ -1,0 +1,7 @@
+"dataset_accession","disease_group","disease_full_name","source_article","source_pmid","n_samples"
+"GSE173682","OVC","ovarian cancer","A multi-omic single-cell landscape of human gynecologic malignancies","34739872",5
+"GSE173682","UCEC/EC","uterine corpus endometrial carcinoma / endometrial cancer","A multi-omic single-cell landscape of human gynecologic malignancies","34739872",6
+"GSE197461","CEAD/ADC","cervical adenocarcinoma","Decipher heterogeneity of cervical squamous cell carcinoma and adenocarcinoma with different HPV status: combining scRNA and TCR-seq with 3D organoid","37794698",5
+"GSE197461","CESC/CSCC","cervical squamous cell carcinoma","Decipher heterogeneity of cervical squamous cell carcinoma and adenocarcinoma with different HPV status: combining scRNA and TCR-seq with 3D organoid","37794698",3
+"GSE208653","CEAD/ADC","cervical adenocarcinoma","Spatiotemporally deciphering persistent HPV infection in precancer to cervical cancer progression using scRNA-seq and spatial transcriptomics","36967539;37794698",1
+"GSE208653","CESC/CSCC","cervical squamous cell carcinoma","Spatiotemporally deciphering persistent HPV infection in precancer to cervical cancer progression using scRNA-seq and spatial transcriptomics","36967539;37794698",2

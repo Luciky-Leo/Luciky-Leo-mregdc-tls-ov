@@ -1,0 +1,8 @@
+item	value
+method	singleCellHaystack
+package_version	1.0.3
+cells	60000
+genes	1500
+ranked_features	1500
+input_expression	E:/Reserch/MregDC/analysis_rebuild_20260520/15_supplementary_cns_methods_20260525/02_inputs/xenium_haystack_expression.rds
+input_embedding	E:/Reserch/MregDC/analysis_rebuild_20260520/15_supplementary_cns_methods_20260525/02_inputs/xenium_haystack_embedding.csv

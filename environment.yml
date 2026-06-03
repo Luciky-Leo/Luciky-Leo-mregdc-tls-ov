@@ -1,0 +1,26 @@
+name: mregdc-tls-ovc-repro
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.12
+  - r-base=4.5
+  - pandas
+  - numpy
+  - scipy
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - openpyxl
+  - requests
+  - pyarrow
+  - r-survival
+  - r-glmnet
+  - r-readr
+  - r-dplyr
+  - r-tidyr
+  - r-ggplot2
+  - r-broom
+  - r-openxlsx
+  - r-data.table
+  - r-optparse

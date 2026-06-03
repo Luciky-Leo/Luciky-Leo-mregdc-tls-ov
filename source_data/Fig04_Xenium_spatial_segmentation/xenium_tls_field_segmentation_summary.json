@@ -1,0 +1,7 @@
+{
+  "n_cells": 407124,
+  "n_genes": 9475,
+  "n_tls_fields": 733,
+  "method": "Xenium gene-set scoring; TLS-high bins segmented by scipy.ndimage.label; nearest-field distance by scipy.spatial.cKDTree",
+  "guardrail": "TLS fields are operational transcriptomic TLS-high fields, not histologic E/P/S TLS calls."
+}
