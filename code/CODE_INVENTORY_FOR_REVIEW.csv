@@ -1,4 +1,4 @@
-component,scope,relative_or_project_path,status,notes
+﻿component,scope,relative_or_project_path,status,notes
 manuscript_package_build,LaTeX package assembly,code/build_jtm_submission_package.py,included,Builds the JTM Springer Nature package and copies figures/source data.
 figure_upload_compression,review-upload figure compression,code/create_jtm_compressed_figures.py,included,Creates <10 MB review/upload figure PDFs without overwriting production figures.
 tcga_ov_clinical_fetch,GDC clinical covariate retrieval,code/fetch_tcga_ov_clinical_for_adjusted_cox.py,included,Fetches TCGA-OV age/stage/grade/residual-disease fields from the GDC API and merges them with the Fig9 model cohort.
@@ -10,4 +10,5 @@ science_tls_redraw,Science TLS style redraw layer,E:/Reserch/MregDC/science_tls_
 multi_sample_spatial,23-sample spatial extension,E:/Reserch/MregDC/analysis_rebuild_20260520/22_yzgc_spatial_extended_20260528,available_locally,Contains R scripts and panel manifests for multi-sample spatial support.
 fig5_8_original_r_panels,early Fig5-Fig8 source panels and QC,E:/Reserch/MregDC/analysis_rebuild_20260520/11_main_fig5_8_R_20260523,available_locally,Contains QC tables for immune, patient, and perturbation panels.
 celloracle_full_method,CellOracle environment and outputs,E:/Reserch/MregDC/analysis_rebuild_20260520/16_full_method_integration_20260527,available_locally,Method-specific environment and outputs retained locally; public repository DOI still needed.
-public_repository,public archival code URL,https://github.com/Luciky-Leo/Luciky-Leo-mregdc-tls-ov and https://doi.org/10.5281/zenodo.20523738,complete,Public GitHub repository and Zenodo DOI for the reviewer-facing reproducibility package.
+public_repository,public archival code URL,https://github.com/Luciky-Leo/Luciky-Leo-mregdc-tls-ov and https://doi.org/10.5281/zenodo.20529436,complete,Public GitHub repository and Zenodo DOI for the reviewer-facing reproducibility package.
+

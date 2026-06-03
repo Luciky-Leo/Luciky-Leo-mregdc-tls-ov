@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import re
 import shutil
@@ -94,7 +94,7 @@ Not applicable.
 The public scRNA-seq datasets analyzed in this study are available from GEO under accession numbers GSE197461, GSE208653, and GSE173682. GSE197461 and GSE208653 were used for the cervical squamous cell carcinoma and cervical adenocarcinoma components, and GSE173682 was used for the ovarian and endometrial tumor components. The sample-level reconstruction of the 22-sample scRNA-seq cohort is provided in Supplementary Table~S1 and in the Source Data folder. Signature definitions, legacy-label harmonization, and gene-coverage/marker-availability audits are provided in Supplementary Table~S2 and \texttt{source\_data/Tables\_signature\_and\_GEO}. The public 10x Genomics scFFPE ovarian cancer matrix is available from the 10x Genomics 17k human ovarian cancer scFFPE dataset. The public Xenium Prime ovarian cancer FFPE dataset is available from the 10x Genomics Xenium Prime FFPE human ovarian cancer dataset. TCGA-OV RNA-seq and clinical data were retrieved from the Genomic Data Commons, and normal-tissue reference data were retrieved from GTEx. Additional public ovarian spatial transcriptomic datasets used for multi-sample spot-level support are summarized in the Source Data folder. Derived IF ROI-quantification, TLS-score, spatial co-localization, TLS-distance-gradient, ten-method immune-deconvolution, immune-richness-adjusted specificity, patient-level prognostic-model, CellOracle TF-level perturbation, scTenifoldKnk virtual-knockout, virtual-screening, and docking-audit tables generated for Figs.~1--11 and Supplementary Figs.~S1--S6 are included in the Source Data folder accompanying this submission where table output was generated. Additional de-identified data supporting the findings of this study are available from the corresponding authors on reasonable request and subject to institutional and ethical restrictions.
 
 \bmhead{Code availability}
-Code used for manuscript assembly, source-data indexing, clinical sensitivity modeling, and reviewer-facing reproducibility checks is available at \url{https://github.com/Luciky-Leo/Luciky-Leo-mregdc-tls-ov} and archived at Zenodo under DOI \url{https://doi.org/10.5281/zenodo.20523738}. Figure-level source-data files are provided in the repository under \texttt{source\_data/} and are mapped to current manuscript figures in \texttt{source\_data/SOURCE\_DATA\_INDEX.csv}. Additional upstream analysis scripts used to derive the single-cell, spatial, immune-deconvolution, perturbation, prognostic-model, and docking source tables are available from the corresponding authors on reasonable request.
+Code used for manuscript assembly, source-data indexing, clinical sensitivity modeling, and reviewer-facing reproducibility checks is available at \url{https://github.com/Luciky-Leo/Luciky-Leo-mregdc-tls-ov} and archived at Zenodo under DOI \url{https://doi.org/10.5281/zenodo.20529436}. Figure-level source-data files are provided in the repository under \texttt{source\_data/} and are mapped to current manuscript figures in \texttt{source\_data/SOURCE\_DATA\_INDEX.csv}. Additional upstream analysis scripts used to derive the single-cell, spatial, immune-deconvolution, perturbation, prognostic-model, and docking source tables are available from the corresponding authors on reasonable request.
 
 \bmhead{Materials availability}
 No unique materials were generated in this study.
@@ -305,3 +305,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

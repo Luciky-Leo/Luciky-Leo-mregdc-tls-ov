@@ -1,4 +1,4 @@
-cff-version: 1.2.0
+﻿cff-version: 1.2.0
 title: "MregDC-TLS ovarian cancer reproducibility package"
 message: "If you use this repository, please cite the archived release DOI and the associated manuscript."
 type: software
@@ -14,5 +14,6 @@ authors:
 year: 2026
 license: MIT
 repository-code: "https://github.com/Luciky-Leo/Luciky-Leo-mregdc-tls-ov"
-doi: "10.5281/zenodo.20523738"
+doi: "10.5281/zenodo.20529436"
 abstract: "Reviewer-facing code and source-data package for a study of TLS-associated LAMP3+CCR7+ mregDC states in ovarian cancer."
+

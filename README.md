@@ -1,6 +1,6 @@
-# MregDC-TLS ovarian cancer reproducibility package
+﻿# MregDC-TLS ovarian cancer reproducibility package
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20523738.svg)](https://doi.org/10.5281/zenodo.20523738)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20529436.svg)](https://doi.org/10.5281/zenodo.20529436)
 
 This repository contains reviewer-facing code, source-data tables, and compact figure files for the manuscript:
 
@@ -57,6 +57,7 @@ A minimal portable environment specification is provided in `environment.yml`. S
 
 This repository is archived at Zenodo under DOI:
 
-https://doi.org/10.5281/zenodo.20523738
+https://doi.org/10.5281/zenodo.20529436
 
 Cite the archived release together with the final published article.
+
