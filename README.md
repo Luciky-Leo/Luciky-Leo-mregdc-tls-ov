@@ -1,5 +1,7 @@
 # MregDC-TLS ovarian cancer reproducibility package
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20523738.svg)](https://doi.org/10.5281/zenodo.20523738)
+
 This repository contains reviewer-facing code, source-data tables, and compact figure files for the manuscript:
 
 **Spatial association of TLS programs and LAMP3+CCR7+ mregDC states marks an immune-prognostic context in ovarian cancer**
@@ -53,4 +55,8 @@ A minimal portable environment specification is provided in `environment.yml`. S
 
 ## Suggested citation
 
-If this repository is archived through Zenodo or another DOI service, cite the DOI generated for the release together with the final published article.
+This repository is archived at Zenodo under DOI:
+
+https://doi.org/10.5281/zenodo.20523738
+
+Cite the archived release together with the final published article.

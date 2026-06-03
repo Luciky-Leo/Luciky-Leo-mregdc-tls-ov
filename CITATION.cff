@@ -14,4 +14,5 @@ authors:
 year: 2026
 license: MIT
 repository-code: "https://github.com/Luciky-Leo/Luciky-Leo-mregdc-tls-ov"
+doi: "10.5281/zenodo.20523738"
 abstract: "Reviewer-facing code and source-data package for a study of TLS-associated LAMP3+CCR7+ mregDC states in ovarian cancer."

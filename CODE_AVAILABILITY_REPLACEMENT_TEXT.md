@@ -1,9 +1,7 @@
 # Code availability replacement text
 
-Use this after the GitHub repository and archive DOI are created.
+Final code-availability text with repository URL and Zenodo DOI.
 
 ```text
-Code used for manuscript assembly, source-data indexing, clinical sensitivity modeling, and reviewer-facing reproducibility checks is available at https://github.com/Luciky-Leo/Luciky-Leo-mregdc-tls-ov and will be archived at [DOI to be inserted after Zenodo/figshare/OSF deposition]. Figure-level source-data files are provided in the repository under source_data/ and are mapped to current manuscript figures in source_data/SOURCE_DATA_INDEX.csv. Large public single-cell and spatial transcriptomic datasets were not redistributed and can be accessed from the public accessions and URLs listed in Supplementary Table S3.
+Code used for manuscript assembly, source-data indexing, clinical sensitivity modeling, and reviewer-facing reproducibility checks is available at https://github.com/Luciky-Leo/Luciky-Leo-mregdc-tls-ov and archived at Zenodo under DOI https://doi.org/10.5281/zenodo.20523738. Figure-level source-data files are provided in the repository under source_data/ and are mapped to current manuscript figures in source_data/SOURCE_DATA_INDEX.csv. Large public single-cell and spatial transcriptomic datasets were not redistributed and can be accessed from the public accessions and URLs listed in Supplementary Table S3.
 ```
-
-Before final submission, replace `[DOI to be inserted after Zenodo/figshare/OSF deposition]` with the real DOI.
