@@ -17,7 +17,7 @@ Suggested repository:
 5. Commit with message:
    `Initial reproducibility package for MregDC TLS ovarian cancer study`
 6. Create a release:
-   - Tag: `v1.0.0`
+   - Tag: `v1.0.1`
    - Release title: `Peer-review reproducibility package`
 
 ## Option B: GitHub Desktop
@@ -50,7 +50,7 @@ After the GitHub repository is public:
 
 1. Log into Zenodo with GitHub.
 2. Enable the `Luciky-Leo/Luciky-Leo-mregdc-tls-ov` repository.
-3. Create a GitHub release `v1.0.0`.
+3. Create a GitHub release `v1.0.1`.
 4. Zenodo will archive the release and generate a DOI.
 5. Replace the manuscript Code availability placeholder with the GitHub URL and DOI.
 
