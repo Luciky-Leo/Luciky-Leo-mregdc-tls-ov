@@ -1,6 +1,6 @@
-﻿cff-version: 1.2.0
-title: "MregDC-TLS ovarian cancer reproducibility package"
-message: "If you use this repository, please cite the archived release DOI and the associated manuscript."
+cff-version: 1.2.0
+title: "MregDC-TLS ovarian cancer reproducibility package: Cancers submission version"
+message: "If you use this repository, please cite the archived Zenodo release DOI and the associated manuscript."
 type: software
 authors:
   - family-names: Lu
@@ -15,6 +15,4 @@ year: 2026
 license: MIT
 repository-code: "https://github.com/Luciky-Leo/Luciky-Leo-mregdc-tls-ov"
 doi: "10.5281/zenodo.20523737"
-abstract: "Reviewer-facing code and source-data package for a study of TLS-associated LAMP3+CCR7+ mregDC states in ovarian cancer."
-
-
+abstract: "Reviewer-facing code, manuscript source, figure, and source-data package for a Cancers submission version studying TLS-associated LAMP3+CCR7+ mregDC antigen-presentation programs in ovarian cancer."

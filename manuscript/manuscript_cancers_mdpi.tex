@@ -1,0 +1,348 @@
+% LaTeX support: latex@mdpi.com
+\documentclass[cancers,article,submit,pdftex,moreauthors]{Definitions/mdpi}
+
+\firstpage{1}
+\makeatletter
+\setcounter{page}{\@firstpage}
+\makeatother
+\pubvolume{1}
+\issuenum{1}
+\articlenumber{0}
+\pubyear{2026}
+\copyrightyear{2026}
+\datereceived{ }
+\daterevised{ }
+\dateaccepted{ }
+\datepublished{ }
+\setlength{\headheight}{20pt}
+\emergencystretch=3em
+
+\Title{Integrative Single-Cell and Spatial Transcriptomic Analysis Identifies a TLS-Associated LAMP3\texorpdfstring{$^{+}$}{+}CCR7\texorpdfstring{$^{+}$}{+} mregDC Antigen-Presentation Program in Ovarian Cancer}
+
+\Author{Feifan Lu $^{1,\dagger}$, Ting Zhang $^{2,\dagger}$, Zhixuan Li $^{3}$, Renqi Yao $^{3}$, Hao Hu $^{4}$, Rui Guan $^{1,*}$ and Mingjuan Xu $^{1,*}$}
+
+\AuthorNames{Feifan Lu, Ting Zhang, Zhixuan Li, Renqi Yao, Hao Hu, Rui Guan and Mingjuan Xu}
+
+\address{%
+$^{1}$ \quad Department of Obstetrics and Gynecology, Changhai Hospital, Naval Medical University, Shanghai 200433, China\\
+$^{2}$ \quad Department of Hematology, Shanghai East Hospital, Tongji University, Shanghai 200120, Shanghai, China\\
+$^{3}$ \quad National Facility for Translational Medicine (Beijing), Medical Innovation Research Division, PLA General Hospital, Beijing 100853, China\\
+$^{4}$ \quad Department of Pathology, Changhai Hospital, Naval Medical University, Shanghai 200433, China}
+
+\corres{Correspondence: cngreen785@163.com (R.G.); mingjuanxu@smmu.edu.cn (M.X.)}
+\secondnote{These authors contributed equally to this work.}
+
+\simplesumm{Ovarian cancer often contains immune-rich regions, but the spatial relationship between tertiary lymphoid structures (TLSs) and dendritic-cell states remains incompletely defined. We integrated public single-cell and spatial transcriptomic datasets, representative four-marker immunofluorescence, patient-level immune deconvolution, exploratory survival modeling, and computational perturbation analyses. The results support a cautious model in which LAMP3+CCR7+ mature regulatory dendritic-cell programs are enriched in or near TLS-score-defined immune fields and are associated with antigen-presentation/MHC-II proxy, interferon, and patient immune-context features. This study does not claim causal function or clinical treatment efficacy; instead, it provides a reproducible framework for prioritizing TLS-associated mregDC programs for future raw-channel pathology validation and immunotherapy-oriented experimental testing.}
+
+\abstract{Tertiary lymphoid structures (TLSs) are spatial immune niches in solid tumors, but their relationship to mature regulatory dendritic-cell (mregDC) states in ovarian cancer remains incompletely resolved. We integrated public gynecological tumor single-cell RNA sequencing, representative CD11C/HLA-DRA/LAMP3/CCR7 multiplex immunofluorescence, public Xenium and multi-sample spatial transcriptomics, TCGA-OV immune deconvolution and exploratory prognostic modeling, scTenifoldKnk and CellOracle perturbation analyses, and computational drug prioritization. A LAMP3+CCR7+ dendritic-cell state showed mature migratory, antigen-presentation, checkpoint, and NF-kappaB/TNF-associated programs. Spatial analyses linked TLS-score-defined regions to mregDC, antigen-presentation/MHC-II proxy, and interferon-associated signals, with distance-gradient analyses supporting TLS-proximal enrichment. Immune deconvolution associated the TLS/mregDC axis with an immune-infiltrated TCGA-OV contexture, whereas adjusted analyses emphasized dependence on broader immune-program richness. Perturbation and drug-prioritization analyses nominated candidate regulatory and therapeutic axes for experimental testing. These data support a hypothesis-generating model of a TLS-associated LAMP3+CCR7+ mregDC antigen-presentation program in ovarian cancer, while requiring raw-channel tissue validation, functional perturbation, and independent clinical testing.}
+
+\keyword{ovarian cancer; tertiary lymphoid structure; mregDC; spatial transcriptomics; single-cell RNA sequencing; antigen presentation; immune infiltration; translational immuno-oncology}
+
+\begin{document}
+
+\section{Introduction}
+Gynecological malignancies remain a major challenge to women's health, and ovarian cancer (OVC) is particularly difficult to manage once advanced. Although immune checkpoint blockade has improved outcomes in selected gynecological cancers, its benefit in OVC has generally been limited because robust predictive biomarkers are lacking and the tumor microenvironment is highly heterogeneous\cite{bib1,bib3,bib4,bib5,bib6,bib7,bib8}. A clearer definition of the immune architecture of OVC may therefore help explain why some tumors appear inflamed yet remain therapeutically resistant.
+
+Dendritic cells (DCs) are central antigen-presenting cells, but tumor-associated DC states may contribute to either immune activation or immune regulation\cite{bib14,bib15,bib16}. Across tumor types, single-cell studies have described mature LAMP3/CCR7-enriched DC programs that are variably termed mregDCs, DC3-like cells, or $CCR7^{+}LAMP3^{+}$ states\cite{bib17,bib19,bib20}. A recent pan-cancer single-cell analysis further refined tumor-infiltrating DC subsets and emphasized tissue-specific DC programs, reinforcing the need to interpret mregDCs as context-dependent cell states rather than as a fixed lineage\cite{bib123}. Because the transcriptional boundaries and functional roles of these states vary across tissues, we use the term mregDCs descriptively for the OVC-associated $LAMP3^{+}CCR7^{+}$ dendritic-cell state while providing representative tissue-image support with a DC/APC-focused immunofluorescence panel. Tertiary lymphoid structures (TLSs) have likewise been linked to local immune activation and immunotherapy relevance in multiple tumors\cite{bib32,bib33}. Recent TLS studies have moved the field from binary TLS detection toward spatial location, maturation state, and composite TLS metrics, including ovarian-cancer-specific immunotherapy perspectives and pan-cancer spatial TLS atlases\cite{bib118,bib119,bib122}. Importantly, the pan-cancer spatial atlas reported limited TLS detection in the OVCA spatial-transcriptomic subset while identifying abundant segmented TLSs in an HGSOC H\&E therapy cohort, underscoring that ovarian TLS biology should be framed around TLS-positive regions and maturation composition rather than disease-wide TLS abundance\cite{bib118}. However, whether mregDC states are spatially associated with TLS programs in OVC remains unclear.
+
+Recent work has also emphasized that single-cell biomarker discovery increasingly requires patient-level feature construction, multigene modeling, and downstream biological interpretation rather than simple one-marker differential-expression screening\cite{bib112}. In parallel, in silico perturbation methods such as scTenifoldKnk and CellOracle provide a practical framework for prioritizing regulatory nodes from single-cell gene-regulatory networks when experimental perturbation is not immediately feasible\cite{bib113,bib114}. These approaches do not replace functional validation, but they can help connect cell-state markers, spatial localization, and candidate regulatory programs into a testable hierarchy.
+
+To address this question, we integrated scRNA-seq, CD11C/HLA-DRA/LAMP3/CCR7 multiplex immunofluorescence, Xenium spatial transcriptomics, multi-sample spatial transcriptomic support, TCGA/GTEx-based bulk analyses, patient-level composite modeling, exploratory in silico perturbation analyses, and a drug-prioritization layer to characterize a $LAMP3^{+}CCR7^{+}$ dendritic-cell program in OVC. Consistent with the primarily translational and computational design of the study, our aim was to assemble transcriptional, spatial, immune-context, prognostic, perturbation-prioritization, and drug-prioritization evidence rather than claim definitive causality, niche specificity beyond immune-richness, or clinical drug efficacy. Accordingly, spatial antigen-presentation signals are reported as MHC-II/AP proxies where direct HLA-family genes are unavailable, the four-marker immunofluorescence layer is interpreted as representative tissue-image support, and all prognostic, perturbation, and drug analyses are exploratory. Specifically, we asked whether OVC contains a reproducible mregDC state, whether this state can be detected in tissue with a focused CD11C/HLA-DRA/LAMP3/CCR7 marker panel, whether TLS-score-defined domains contain spatially coordinated mregDC and antigen-presentation proxy programs, how these fields relate to distance-dependent immune/tumor programs and patient-level immune contexture, which regulatory nodes are prioritized by virtual perturbation analysis, and which candidate drug classes should be tested experimentally.
+
+\section{Materials and Methods}
+\subsection{Study design and data sources}
+All analyses were conducted using public datasets or ethically approved clinical specimens and were designed as a descriptive, multimodal assessment of the OVC immune microenvironment. The original GEO scRNA-seq cohort comprised 22 gynecological tumor samples reconstructed from three public accessions: GSE197461 and GSE208653 for the cervical component, including 5 cervical squamous cell carcinoma (CESC/CSCC) and 6 cervical adenocarcinoma (CEAD/ADC) samples, and GSE173682 for the ovarian and endometrial component, including 5 OVC and 6 uterine corpus endometrial carcinoma/endometrial cancer (UCEC/EC) samples\cite{bib115,bib116,bib117}. Multiplex immunofluorescence was performed on FFPE sections following routine pathological review. Spatial analyses were performed on one public FFPE OVC Xenium Prime dataset containing 407,124 cells generated with the Xenium Human 5K panel plus 100 custom targets\cite{bib53,bib54,bib55}. Additional marker-workflow and perturbation analyses used the public 10x Genomics 17k human ovarian cancer scFFPE matrix containing 17,553 cells. TCGA-OV STAR-count RNA-seq and clinical data were used for immune-correlation and retrospective survival analyses, and GTEx normal-tissue data were used where normal reference comparisons were required\cite{bib58}.
+
+\subsection{Single-cell transcriptomic analysis}
+Raw FASTQ files were aligned to the GRCh38 reference genome with Cell Ranger (v6.1.2), and count matrices were processed in Seurat (v4.3.0)\cite{bib34,bib35,bib36}. Cells with fewer than 300 genes, more than 6,000 genes, or more than 10\% mitochondrial transcripts were excluded\cite{bib37,bib38}. After normalization and Harmony-based batch correction, 31,757 high-quality cells were retained. Highly variable genes were identified, the top 30 principal components were used for dimensionality reduction, and graph-based clustering was performed at a resolution of 0.8\cite{bib39,bib40,bib41,bib42,bib43}. Major immune populations were annotated by differential marker analysis (\textit{FindAllMarkers}, Wilcoxon test) with reference to published pan-cancer myeloid atlases and the CellMarker database\cite{bib21,bib44}.
+
+Cell-type composition within the immune-cell dataset was summarized with stacked bar plots, box plots, sample-level heatmaps, and correlation matrices\cite{bib45,bib46}. Because the single-cell dataset was immune-cell focused, these summaries were interpreted as relative immune-state composition rather than unbiased whole-tissue cellular abundance. Potential ligand--receptor interactions were analyzed with CellChat using CellChatDB.human and were interpreted as candidate communication axes rather than direct functional evidence\cite{bib47}. Pseudotime analysis was performed using Monocle2 and focused on dendritic-cell states; T/NK cells shown in the trajectory figure were retained for visual context but not for lineage inference\cite{bib48}. In light of prior reports that canonical cDC1 and cDC2 states can acquire a $LAMP3^{+}$ mature regulatory/migratory DC program after tumor-antigen exposure, pseudotime was interpreted as a state-relationship analysis rather than evidence of a linear cDC2-to-cDC1 transition or definitive lineage conversion\cite{bib17,bib18,bib20,bib21}. Functional scores for dendritic-cell and T/NK programs were calculated with \textit{AddModuleScore}, and differentially expressed genes in cDC-M09-LAMP3 were analyzed with DESeq2, followed by GO/KEGG enrichment using \textbf{clusterProfiler}\cite{bib49,bib50,bib51}.
+
+\subsection{Pathology, multiplex immunofluorescence, and spatial analysis}
+Hospital specimens underwent routine H\&E evaluation and diagnosis according to standard histopathological criteria for female genital tumors\cite{bib52}. Multiplex immunofluorescence was designed to detect tissue-level TLS-in/near mregDC-associated staining using a four-marker panel comprising CD11C, HLA-DRA, LAMP3, and CCR7. CD11C and HLA-DRA were used to mark APC-enriched regions, whereas LAMP3 and CCR7 were used to identify mature migratory mregDC-associated staining within or near immune-enriched regions. Standard TSA-based staining, DAPI counterstaining, and multispectral imaging were performed. Representative-image review was performed for one case per cancer type (OVC, CEAD, CESC, and UCEC) and one ROI per case using image-based review of flattened merged JPGs. Because raw separated channels were not used for this manuscript-stage ROI review, values are reported as raw illustrative ROI counts rather than per-mm$^{2}$ densities, statistical four-marker co-localization, or tissue-level abundance estimates. Marker co-occurrence and regional enrichment were interpreted together with the transcriptomic evidence rather than as stand-alone proof of function.
+
+For Xenium data, signals were processed using Xenium Analyzer, Explorer, and Ranger. Spatial interpretation focused on mregDC-associated signals and TLS-score-defined regions in OVC. Because exact HLA-DRA and HLA-family genes were absent from both the public Xenium panel and the public 10x scFFPE matrix used here, public transcriptomic analyses treated CD74, B2M, TAP1, TAP2, CIITA, NLRC5, PSMB8/9, and related antigen-presentation genes as antigen-presentation/MHC-II proxy signals when available. Direct HLA-DRA evidence was assigned to the immunofluorescence panel. TLS regions were operationally defined by concordant layers: a 12-chemokine TLS module, a patient-level 29-gene TLS imprint, an expression-overlap spatial TLS imprint where full spatial gene coverage was not available, and spatial co-localization with B-cell follicle, T-cell zone, Tfh/germinal-center, antigen-presentation, and mregDC-associated scores. Full signature definitions, legacy-label harmonization, and per-dataset gene-coverage audits are provided in Supplementary Table~S2 and \texttt{source\_data/Tables\_signature\_and\_GEO}. Spatial density contours, co-high enrichment, k-nearest-neighbor neighborhood fractions, Moran's I, TLS-ranked decile analyses, and distance-to-TLS-field bins were then used to test whether mregDC-associated signals localized within or adjacent to these TLS-score-defined domains and whether TLS-proximal fields showed coordinated antigen-presentation/interferon programs. The Fig3 CD11C/HLA-DRA/LAMP3/CCR7 immunofluorescence panel was used to identify TLS-in/near mregDCs within tissue regions and was not used by itself to define TLS identity. As supplementary spatial feature analyses, a deterministic 60,000-cell subset was sampled from the public Xenium section with matched x/y coordinates and 1,500 real Xenium genes. singleCellHaystack 1.0.3 was used to rank spatially non-random features, and Hotspot 1.1.3 was used to compute spatial autocorrelation on a h5ad object generated from the same subset with the count layer and spatial coordinates. The Hotspot local-correlation/module step was not used for interpretation because 1,269 FDR-significant genes made pairwise module computation impractical in the current run. These analyses were used as spatial non-randomness, autocorrelation, and module-support audits rather than as histological TLS-maturation staging.
+
+\subsection{Bulk immune infiltration, prognostic modeling, and virtual perturbation analyses}
+TCGA STAR counts were converted to TPM and log$_2$(TPM+1)-transformed. Immune infiltration was estimated with a ten-method human tumor microenvironment deconvolution framework implemented through the \textbf{IOBR} and \textbf{immunedeconv} workflows: quanTIseq, TIMER, CIBERSORT, CIBERSORT-ABS, MCP-counter, xCell, EPIC, ESTIMATE, ABIS, and ConsensusTME\cite{bib56,bib57}. TIMER and ABIS were run through direct \textbf{immunedeconv} functions after the generic wrapper failed for these two methods; TIMER used ovarian cancer as the indication for all TCGA-OV profiles, and ABIS was run on the same TPM patient-level expression matrix. TLS/mregDC patient-level scores were correlated with method-specific immune-cell estimates and collapsed into immune-class summaries only after retaining method provenance. LAMP3 was first screened across gynecological tumors using GEPIA, after which OVC was selected for downstream retrospective prognostic analyses\cite{bib58}.
+
+Patients were stratified primarily by median and quartile LAMP3 expression; data-derived optimal-cutoff analysis (\textit{surv\_cutpoint} in \textbf{survminer}) was treated as a sensitivity analysis because of the risk of optimistic separation without external validation. For patient-level modeling, mregDC-associated features, lymphoid/TLS-associated features, immune-deconvolution scores, and selected clinical covariates were integrated as candidate predictors. Lasso regression with 10-fold cross-validation (\textbf{glmnet}; seed 20260528) used the \texttt{lambda.min} rule for coefficient selection, followed by Cox proportional hazards modeling, stepwise model selection, Kaplan--Meier analysis, time-dependent ROC analysis, calibration-by-risk-quintile analysis, decision-curve analysis (\textbf{ggDCA}), and nomogram construction (\textbf{rms}) to evaluate exploratory prognostic performance rather than derive a clinically validated predictor\cite{bib59,bib61,bib62,bib63,bib64,bib112}. For clinical sensitivity analysis, GDC TCGA-OV clinical fields were matched to the model cohort and a Cox model was adjusted for age, advanced FIGO stage (III/IV vs I/II), and high grade (G3/G4/GB vs G1/G2). The adjusted analysis included 416 patients after clinical-covariate complete-case filtering from the 426-patient model cohort. Residual disease was audited but not included because only 14 of 426 model patients had a recorded value.
+
+To address whether mregDC/TLS/AP coupling reflected generic immune-hot tumors, we performed immune-richness-adjusted specificity analyses. At the TCGA-OV patient level, immune estimates were collapsed by patient after retaining method provenance, and composite controls were constructed for broad immune context, tumor purity, B-lineage scores, T-lineage scores, and a myeloid/APC sensitivity control. Partial Spearman correlations were calculated by rank-transforming variables, residualizing both variables of interest against the control matrix with ordinary least-squares regression, and correlating the residuals. Spatial spot-level analyses used the multi-sample spatial downsample table and controlled mregDC--TLS associations for antigen-presentation/MHC-II, B-cell/TLS, and T-cell-zone scores; the reciprocal mregDC--antigen-presentation analysis controlled for TLS, B-cell/TLS, and T-cell-zone scores. Xenium cell-level sensitivity analyses controlled for antigen-presentation proxy, interferon-response, tumor-proliferation, and tumor-EMT/invasion programs. These adjusted tests were interpreted as confounding audits, not as proof of causal niche specificity.
+
+For virtual perturbation analysis, scTenifoldKnk virtual knockout was performed on 6,000 sampled cells from the 10x scFFPE matrix using 858 high-variable or marker-retained genes. ITGAX, LAMP3, CCR7, and CD74 were tested as marker/proxy knockout targets, with CD74 used as the antigen-presentation proxy because HLA-DRA and HLA-family genes were absent from the public matrix\cite{bib113}. CellOracle 0.20.0 transcription-factor perturbation was then performed in Ubuntu-22.04 WSL using the human hg38 promoter base GRN \texttt{hg38\_gimmemotifsv5\_fpr2}, 5,000 sampled cells, 2,219 retained genes, and 149 expression-overlapping transcription factors\cite{bib114}. Candidate perturbed transcription factors included RELA, RELB, NFKB1, NFKB2, STAT1, STAT3, IRF1, IRF4, IRF8, BATF3, SPI1, and CEBPB. CellOracle results were interpreted as transcription-factor-level perturbations of upstream regulators, not as direct knockout of non-transcription-factor markers such as LAMP3 or CCR7. These analyses were used for hypothesis prioritization only and were not interpreted as experimental knockout evidence.
+
+For the drug-prioritization layer, regulators prioritized by TLS/mregDC perturbation analyses were mapped to targetable classes, including JAK, IKK/NF-$\kappa$B, proteasome, polyphenol, and STAT3-inhibitor classes. Candidate compounds were ranked by a composite virtual-screening score incorporating regulator mapping, predicted TLS/mregDC program reversal, high-risk signature reversal, and available clinical/target evidence. Molecular-docking audit was performed for receptor-ligand pairs with available co-crystal or receptor structures using OpenBabel for ligand/receptor preparation and AutoDock Vina for non-covalent redocking. Three pairs completed Vina scoring, whereas two boronate proteasome-inhibitor pairs were marked Vina-ineligible because standard non-covalent Vina atom typing does not adequately represent boronate covalent chemistry. Figure~\ref{fig11} was therefore interpreted as drug prioritization and docking feasibility, not as evidence of therapeutic efficacy.
+
+\subsection{Statistics}
+Statistical analyses were performed in R and GraphPad Prism. Unless otherwise specified, group comparisons used non-parametric tests, correlations used Spearman coefficients, and statistical significance was defined as $P<0.05$\cite{bib65,bib66,bib67}.
+
+\section{Results}
+\subsection{A multimodal cross-tumor framework identifies the OVC immune context for TLS-associated mregDC analysis}
+
+The final analytical framework combined public scRNA-seq, tissue immunofluorescence, Xenium spatial transcriptomics, multi-sample spatial validation, TCGA/GTEx patient-level analyses, virtual perturbation, and drug-prioritization layers (Figure~\ref{fig1}). The scRNA-seq reference comprised 22 gynecological tumor specimens reconstructed from GSE197461, GSE208653, and GSE173682, including CEAD, CESC, OVC, and UCEC. After quality control and integration, 31,757 cells were resolved into 23 immune subpopulations spanning T/NK, myeloid, dendritic-cell, B-cell, and plasma-cell states. OVC showed a relatively myeloid-rich immune composition in this immune-cell-focused dataset, with higher macrophage and dendritic-cell representation and lower exhausted/regulatory T-cell representation than several comparator gynecological tumor groups. These composition summaries were used to define immune-state context rather than unbiased whole-tissue cellular abundance.
+
+Within the dendritic-cell compartment, a small cDC-M09-LAMP3 population was detected across tumor types and was enriched for $LAMP3$, $CCR7$, and additional maturation, migration, antigen-presentation, and checkpoint-related genes. Sample-level immune-program heatmaps and correlation matrices further separated myeloid-enriched programs from exhausted/regulatory T-cell programs, placing the OVC immune context in a framework suitable for downstream spatial and patient-level analyses.
+
+\begin{figure}[H]
+\centering
+\begin{adjustwidth}{-\extralength}{0cm}
+\centering
+\includegraphics[width=0.92\fulllength]{Fig1.pdf}
+\end{adjustwidth}
+\caption{\textbf{Study design and cross-tumor single-cell immune reference.} \textbf{A,} Overview of the multimodal workflow integrating public scRNA-seq, four-marker IF, spatial transcriptomics, patient-level modeling, virtual perturbation, and drug-prioritization analyses. \textbf{B,} Integrated immune-cell atlas and marker-supported annotation of the reconstructed gynecological tumor scRNA-seq cohort. \textbf{C,} Differentially expressed marker genes defining major immune subsets and refined cell states. \textbf{D,} Sample-level immune-cell composition across CEAD, CESC, OVC, and UCEC specimens. \textbf{E,} Cross-tumor comparisons of selected immune-cell-state proportions. \textbf{F,} Heatmap summary of sample-level immune-state composition. \textbf{G,} Correlation structure among annotated immune-cell states.}\label{fig1}
+\end{figure}
+
+
+\subsection{Single-cell analyses define a mature migratory mregDC state with inflammatory and antigen-presentation features}
+
+Cell-cell communication analysis suggested that myeloid populations were major signal senders and T-cell populations were the predominant receivers, with representative CD86--CTLA4 and CD80--CD28 interactions (Figure~\ref{fig2}). In the dendritic-cell compartment, cDC-M09-LAMP3 localized near canonical cDC-M07-CD1C and cDC-M10-CLEC9A states in state-relationship analyses while showing the highest maturity, migration, regulatory, checkpoint, and antigen-presentation scores. This state expressed $CD40$, $CD80$, $CD86$, $CD274$, $PDCD1LG2$, $CCR7$, and $MYO1G$, consistent with a mature migratory DC phenotype.
+
+Because previous studies show that canonical cDC1 and cDC2 populations can acquire a $LAMP3^{+}$ mregDC program after tumor-antigen exposure, the pseudotime and trajectory-related panels were interpreted as transcriptional state relatedness rather than definitive lineage conversion\cite{bib17,bib18,bib20,bib21}. Differential-expression and pathway analyses showed upregulation of $LAMP3$, $CCR7$, $CCL19$, and $FSCN1$ together with enrichment of NF-$\kappa$B, TNF, and C-type lectin receptor signaling, supporting a mature migratory dendritic-cell state with inflammatory and T-cell-directed features.
+
+\begin{figure}[H]
+\centering
+\begin{adjustwidth}{-\extralength}{0cm}
+\centering
+\includegraphics[width=0.92\fulllength]{Fig2.pdf}
+\end{adjustwidth}
+\caption{\textbf{Single-cell analysis defines a mature migratory mregDC program in OVC.} \textbf{A,} Outgoing and incoming cell-cell communication patterns across immune-cell states. \textbf{B,} Signaling-pattern map and representative incoming ligand-receptor interactions involving regulatory/exhausted T-cell states. \textbf{C,} Ranking of secreted signaling contributions. \textbf{D,} cDC and T/NK-cell state mapping, trajectory structure, pseudotime, and patient-state composition. \textbf{E,} Marker and program heatmaps for cDC and T/NK-cell subclusters. \textbf{F,} Module-score distributions for maturity, regulatory, migration, cytotoxic, exhaustion, and proliferation programs. \textbf{G,} Pseudotime-associated gene-expression dynamics in cDC and T/NK compartments. \textbf{H,} Up-regulated genes and pathway enrichment for the cDC-M09-LAMP3 state.}\label{fig2}
+\end{figure}
+
+
+\subsection{Four-marker immunofluorescence provides representative tissue-image support for TLS-in/near mregDCs}
+
+To provide representative tissue-image support for the transcript-defined mregDC state, multiplex immunofluorescence was refocused on CD11C, HLA-DRA, LAMP3, and CCR7 (Figure~\ref{fig3}). CD11C and HLA-DRA mark APC-enriched regions, whereas LAMP3 and CCR7 identify the mature migratory mregDC program in the context of the transcriptomic evidence. This four-marker panel was used to visualize mregDC-associated staining within tissue regions; TLS identity was defined separately by the 12-chemokine score, TLS-imprint modules, and spatial co-localization analyses in Figures~\ref{fig4}--\ref{fig6}, with gene lists and coverage audits provided in Supplementary Table~S2. Image-based review of representative merged IF fields included one case per cancer type and one ROI per case (OVC, CEAD, CESC, and UCEC; 4 ROIs total). Raw ROI counts identified 19, 9, 15, and 65 CD11C/HLA-DRA-positive APC-like cells in the OVC, CEAD, CESC, and UCEC ROIs, respectively, with 15, 3, 10, and 53 merged-image ROI events scored as illustrative regional four-marker co-occurrence. Because this assessment used flattened merged images rather than raw separated channels, these counts are reported only as illustrative ROI-level image support and not as per-area tissue densities, single-cell four-marker co-localization statistics, or cross-cancer abundance estimates.
+
+\begin{figure}[H]
+\centering
+\begin{adjustwidth}{-\extralength}{0cm}
+\centering
+\includegraphics[width=0.92\fulllength]{Fig3.pdf}
+\end{adjustwidth}
+\caption{\textbf{Four-marker multiplex immunofluorescence supports TLS-in/near mregDC-associated staining.} \textbf{A,} Representative OVC field showing CD11C, HLA-DRA, LAMP3, and CCR7 staining from low-magnification tissue context to enlarged immune-enriched ROI. \textbf{B,} Representative CEAD immune-enriched field and enlarged ROI. \textbf{C,} Representative CESC immune-enriched field and enlarged ROI. \textbf{D,} Representative UCEC immune-enriched field and enlarged ROI. \textbf{E,} Merged-image ROI-level illustrative count display for CD11C/HLA-DRA-positive APC-like cells and regional four-marker mregDC-associated co-occurrence. \textbf{F,} Merged-image ROI-level illustrative co-occurrence ratio calculated from the same APC-like raw counts. The IF layer supports tissue localization of TLS-in/near mregDC-associated staining but does not define TLS identity or provide cross-cancer tissue-density inference by itself.}\label{fig3}
+\end{figure}
+
+
+\subsection{Xenium segmentation localizes mregDC/AP signals to TLS-score-defined spatial fields}
+
+Xenium spatial transcriptomics resolved 407,124 cells in a public OVC tissue section and enabled spatial analysis of TLS, mregDC, and antigen-presentation programs (Figure~\ref{fig4}). TLS-score maps, mregDC-associated maps, and co-localization contours identified immune-enriched fields with overlapping TLS and mregDC/AP signals. Cell-class segmentation further showed that these fields were embedded within a mixed tumor-immune-stromal architecture rather than distributed randomly across the section.
+
+Neighborhood visualizations showed mregDC/AP signals positioned within or adjacent to lymphoid and myeloid neighborhoods in this single public OVC Xenium section, illustrating proximity of mregDC-associated and antigen-presentation-proxy signals to TLS-score-defined regions. Because the Xenium panel did not contain exact HLA-DRA/HLA genes, public spatial analyses used antigen-presentation/MHC-II proxy genes when available, while direct HLA-DRA evidence was assigned to the IF layer. Thus, Figure~\ref{fig4} establishes spatial localization and neighborhood organization in one exemplar section, not histological TLS maturation staging, direct HLA-DRA transcript measurement, or cross-sample recurrence.
+
+\begin{figure}[H]
+\centering
+\begin{adjustwidth}{-\extralength}{0cm}
+\centering
+\includegraphics[width=0.92\fulllength]{Fig4.pdf}
+\end{adjustwidth}
+\caption{\textbf{Xenium segmentation localizes mregDC/AP-proxy signals to TLS-score-defined fields.} \textbf{A,} Cell-level TLS-program score map in the public OVC Xenium section. \textbf{B,} Cell-level mregDC/AP-proxy score map in the same spatial coordinate frame. \textbf{C,} TLS-high and mregDC-high field contours with co-high regions. \textbf{D,} Full-section cell-class segmentation overlaid on the tissue image, showing mixed tumor, immune, myeloid, stromal, and fibroblast compartments. \textbf{E,} Enlarged lymphoid-myeloid neighborhood highlighting mregDCs, T cells, macrophages, CAFs, and inflammatory tumor cells. \textbf{F,} Second enlarged neighborhood illustrating the same TLS-associated mregDC/AP spatial architecture.}\label{fig4}
+\end{figure}
+
+
+\subsection{Multi-sample spatial transcriptomics supports recurrent mregDC/TLS and antigen-presentation program coupling}
+
+We next tested whether the spatial coupling observed in the Xenium section was reproducible across additional ovarian spatial transcriptomic samples (Figure~\ref{fig5}). Across 23 public full-transcriptome spatial samples comprising 56,546 spots, mregDC, TLS, and antigen-presentation/MHC-II proxy programs were scored per spot using available genes, including exact HLA-DRA, LAMP3, and CCR7 where present. The broad spatial TLS-imprint score used an expression-overlap imprint under a harmonized label rather than assuming complete recovery of the patient-level 29-gene imprint in every platform (Supplementary Table~S2). Selected spatial maps showed recurrent co-occurrence of TLS-high, mregDC-high, antigen-presentation-high, and TLS/mregDC co-high regions across independent datasets. Because gene coverage varied by platform, these analyses support program-level consistency rather than direct validation of the exact four-marker IF phenotype in every dataset.
+
+Sample-level summaries showed positive median coupling between mregDC and TLS programs and recurrent enrichment of TLS/mregDC co-high spots above random expectation. Hotspot and module-support analyses further showed spatially structured stromal, inflammatory, and lymphoid-associated features in the same spatial framework. These multi-sample spatial analyses support recurrent program-level coupling among TLS, mregDC, and antigen-presentation modules, while remaining transcriptomic validations rather than histological TLS-staging assays.
+
+\begin{figure}[H]
+\centering
+\begin{adjustwidth}{-\extralength}{0cm}
+\centering
+\includegraphics[width=0.92\fulllength]{Fig5.pdf}
+\end{adjustwidth}
+\caption{\textbf{Multi-sample spatial transcriptomics supports recurrent mregDC/TLS and AP-proxy program coupling.} \textbf{A,} Representative public ovarian spatial transcriptomic maps showing AP/MHC-II-proxy, mregDC, TLS, TLS-high, mregDC-high, and co-high spot patterns across selected samples. \textbf{B,} Sample-level heatmap of mregDC-TLS, mregDC-MHC-II, TLS-MHC-II, and co-high enrichment metrics. \textbf{C,} Multi-sample spatial cohort summary showing spots per sample and gene-panel size. \textbf{D,} Dataset-level spatial support estimates for mregDC-MHC-II, mregDC-TLS, and TLS/mregDC co-high enrichment. \textbf{E,} Hotspot-ranked spatially autocorrelated genes in sampled spatial data. \textbf{F,} TLS-field module heatmap summarizing TLS, chemokine, HEV/stromal, IFN, MHC-II/AP, mregDC, FDC/GC, proliferation, and EMT/invasion programs.}\label{fig5}
+\end{figure}
+
+
+\subsection{TLS-proximal fields show distance-dependent enrichment of mregDC, MHC-II/AP, and interferon programs}
+
+To move beyond simple co-localization, we analyzed the spatial relationship between TLS-score-defined fields and mregDC/AP programs using decile and distance-gradient summaries (Figure~\ref{fig6}). TLS-high regions were enriched for mregDC-high and antigen-presentation/MHC-II proxy-high signals, and proximal-to-distal analyses showed higher mregDC, MHC-II/AP proxy, and interferon-associated programs near TLS fields. Spot-level scatter matrices also supported coordinated variation among TLS-integrated, mregDC, and antigen-presentation scores.
+
+Across multi-sample spatial datasets, TLS-ranked deciles showed increasing mregDC-high and antigen-presentation-high fractions in higher TLS deciles, whereas distance-to-TLS-field curves showed decreasing co-high or immune-program support away from TLS regions. These results refine the main spatial conclusion from ``TLS and mregDC co-localize'' to a structured field model in which TLS-positive regions contain or border antigen-presentation-enriched mregDC signals. Because distance-gradient summaries were not designed as causal or fully immune-richness-adjusted tests, they describe spatial co-variation; specificity was therefore evaluated separately with immune-richness-adjusted analyses.
+
+\begin{figure}[H]
+\centering
+\begin{adjustwidth}{-\extralength}{0cm}
+\centering
+\includegraphics[width=0.92\fulllength]{Fig6.pdf}
+\end{adjustwidth}
+\caption{\textbf{TLS-decile and distance-gradient analyses summarize spatial co-variation.} \textbf{A,} Relationship between TLS field-area proxy and median TLS score, with co-high fraction and cell count encoded by color and size. \textbf{B,} Proximal-to-distal module contrast for cell-state-associated programs near TLS fields. \textbf{C,} Proximal-to-distal module contrast for immune, antigen-presentation, IFN, and tumor-program scores. \textbf{D,} Spot-level scatter matrices linking TLS-integrated and mregDC-associated scores across selected spatial samples. \textbf{E,} Spot-level scatter matrices linking TLS-integrated and AP/MHC-II-proxy scores. \textbf{F,} TLS-decile gradients for MHC-II-high, mregDC-high, and TLS/mregDC co-high fractions. \textbf{G,} Dataset-level TLS-decile gradients for median MHC-II and mregDC scores. \textbf{H,} Xenium distance-to-TLS-field curves for mregDC, AP/MHC-II, IFN, and tumor-progression-associated programs.}\label{fig6}
+\end{figure}
+
+
+\subsection{Ten-method immune deconvolution links the TLS/mregDC axis to an immune-infiltrated patient contexture}
+
+We next evaluated whether the spatially localized TLS/mregDC program was reflected in bulk immune contexture. In TCGA-OV, tumors were analyzed with the ten-method deconvolution framework comprising quanTIseq, TIMER, CIBERSORT, CIBERSORT-ABS, MCP-counter, xCell, EPIC, ESTIMATE, ABIS, and ConsensusTME (Figure~\ref{fig7}). Because TLS scores intrinsically contain B-cell and lymphoid-chemokine information, we prioritized immune-richness-adjusted analyses over the largest raw correlations. After adjustment for broad immune context, tumor purity, B-cell, and T-cell controls, mregDC--TLS and mregDC--AP/MHC-II associations remained positive but modest in TCGA-OV (partial $\rho=0.288$, $P=1.4\times10^{-9}$ and partial $\rho=0.249$, $P=1.8\times10^{-7}$, respectively; $n=427$). Unadjusted ten-method correlations were higher as expected for immune-rich tumors; for example, MCP-counter B-lineage estimates showed the strongest raw association with the TLS-integrated score ($\rho=0.86$), and ESTIMATE immune scores, TIMER dendritic-cell estimates, ABIS plasmablast estimates, and multiple cytotoxic/myeloid estimates were also positively associated, whereas tumor purity was negatively associated.
+
+Program-level immune-class summaries showed consistent positive correlations across B/plasma, T-cell, myeloid, global-immune, and DC/APC classes. Spearman correlations across the ten-method deconvolution layer were corrected using the Benjamini--Hochberg procedure across 860 non-missing feature--target tests; adjusted values are provided in the source data. The method-coverage summary suggested that deconvolution evidence was not driven by a single algorithm, while marker-expression scatter panels linked CCR7, HLA-DRA, ITGAX, and LAMP3 to immune-estimate variation. In multi-sample spatial spots, mregDC--TLS and mregDC--AP/MHC-II relationships also remained positive after local B/T/AP or B/T/TLS controls (partial $\rho=0.135$ and 0.136, both $P<10^{-4}$; $n=41{,}867$). In the Xenium cell-level sensitivity analysis, strict adjustment primarily retained mregDC--AP/MHC-II coupling (partial $\rho=0.153$, $P<10^{-4}$), whereas the mregDC--TLS residual correlation was very small in magnitude (partial $\rho=-0.025$ despite a nominal $P<10^{-4}$ due to large cell number). These results support a non-redundant mregDC/AP component within the TLS-associated program while cautioning against over-interpreting cell-level TLS coupling as independent of local antigen-presentation, interferon, and tumor-program gradients.
+
+\begin{figure}[H]
+\centering
+\begin{adjustwidth}{-\extralength}{0cm}
+\centering
+\includegraphics[width=0.92\fulllength]{Fig7.pdf}
+\end{adjustwidth}
+\caption{\textbf{Ten-method immune deconvolution links the TLS/mregDC program to immune infiltration in TCGA-OV.} \textbf{A,} Hierarchical heatmap of immune-estimate correlations with IF-core, mregDC, TLS, and checkpoint scores across deconvolution methods. \textbf{B,} Immune-class summary heatmap comparing lymphoid, myeloid, stromal, cytotoxic, and APC-related classes. \textbf{C,} Ranked immune estimates associated with the TLS/mregDC axis. \textbf{D,} Method coverage and number of reported immune features. \textbf{E,} Method-class coverage map across broad immune compartments. \textbf{F,} Correlation scatter panels for TLS-integrated, mregDC-TLS-axis, and checkpoint-associated scores. \textbf{G,} Distribution of TLS/mregDC-associated scores by low and high patient groups. \textbf{H,} Marker-expression scatter matrices linking immune-cell estimates with representative mregDC/AP marker expression.}\label{fig7}
+\end{figure}
+
+
+\subsection{Patient-level composite scores connect the TLS/mregDC axis to exploratory outcome stratification}
+
+To translate cell-state and spatial findings into patient-level features, we integrated IF-core, mregDC, antigen-presentation/MHC-II proxy, TLS-module, B-cell, T-cell, Tfh/GC, checkpoint, and NF-$\kappa$B scores into a patient-level composite framework (Figure~\ref{fig8}). TLS-integrated and mregDC/TLS-axis features were strongly co-structured with B-cell follicle, T-cell zone, checkpoint, and antigen-presentation/MHC-II proxy programs. In the current TCGA-OV analysis, higher TLS/mregDC composite support was associated with lower derived risk, whereas the internally defined high-risk group showed poorer survival.
+
+Clinical-stratum analyses did not support a robust FIGO- or grade-dependent TLS-score shift, although age-associated variation was observed for selected TLS-imprint and antigen-presentation/MHC-II proxy scores. These results position the TLS-associated mregDC/AP field as a patient-level immune context rather than a stand-alone clinical biomarker.
+
+\begin{figure}[H]
+\centering
+\begin{adjustwidth}{-\extralength}{0cm}
+\centering
+\includegraphics[width=0.92\fulllength]{Fig8.pdf}
+\end{adjustwidth}
+\caption{\textbf{Patient-level composite scoring links the TLS/mregDC axis to exploratory outcome stratification.} \textbf{A,} Patient-level feature matrix integrating TLS, mregDC, antigen-presentation/MHC-II, B-cell, T-cell, checkpoint, IF-core, and NF-$\kappa$B-associated programs. \textbf{B,} Kaplan-Meier curves comparing patient groups defined by TLS/mregDC-axis features. \textbf{C,} Clinical-stratum distribution of TLS-integrated scores. \textbf{D,} Clinical-stratum distribution of mregDC/TLS-axis scores. \textbf{E,} Clinical-stratum distribution of IF-core marker scores. \textbf{F,} Relationship between TLS-integrated score and derived risk score. \textbf{G,} Risk-score waterfall with cutoff, high/low grouping background, and sample ordering. \textbf{H,} Kaplan-Meier analysis of internally defined risk groups.}\label{fig8}
+\end{figure}
+
+
+\subsection{Exploratory LASSO-Cox and model-validation analyses summarize a TLS/mregDC immune-prognostic feature set}
+
+We then evaluated whether the patient-level TLS/mregDC framework could be summarized by an exploratory immune-prognostic model (Figure~\ref{fig9}). Correlation and scatter-matrix analyses showed coordinated variation among TLS-integrated, mregDC/TLS-axis, MHC-II/AP, IFN, checkpoint, and NF-$\kappa$B-related features. LASSO-Cox feature selection retained mregDC, antigen-presentation/MHC-II, TLS-12CK, B-cell follicle, Tfh/GC, and NF-$\kappa$B scores. In a GDC clinical sensitivity analysis, the risk score remained associated with overall survival after adjustment for age, advanced FIGO stage (III/IV vs I/II), and high grade (G3/G4/GB vs G1/G2) (HR=4.62, 95\% CI 2.30--9.25, $P=1.6\times10^{-5}$; $n=416$). Age was also independently associated with outcome in this model, whereas advanced stage and high grade were not independently significant, consistent with the limited stage/grade variance in TCGA-OV and indicating that this sensitivity analysis tests whether the risk-score association is abolished by available covariates rather than establishing independence from the full clinical picture. Residual disease was not included in the adjusted model because it was recorded for only 14 of 426 model patients.
+
+Pathway analysis of the high-risk-associated expression program highlighted immune response, regulation of T-cell activation, leukocyte migration, and inflammatory pathways. Time-dependent ROC, LASSO-Cox cross-validation, calibration-by-risk-quintile analyses, and the GDC clinical sensitivity model were retained as internal model-performance checks. Because this model was trained and assessed within TCGA-OV without an independent prospective cohort, it is reported as exploratory prognostic stratification rather than a clinically deployable predictor.
+
+
+\begin{figure}[H]
+\centering
+\begin{adjustwidth}{-\extralength}{0cm}
+\centering
+\includegraphics[width=0.92\fulllength]{Fig9.pdf}
+\end{adjustwidth}
+\caption{\textbf{Exploratory LASSO-Cox modeling prioritizes a TLS/mregDC immune-prognostic feature set.} \textbf{A,} Correlation heatmap of patient-level TLS, mregDC, antigen-presentation/MHC-II, IFN, checkpoint, and NF-$\kappa$B-related features. \textbf{B,} Scatter matrix of key composite-score relationships and fitted trends. \textbf{C,} LASSO-Cox selected feature coefficients. \textbf{D,} Adjusted Cox sensitivity forest plot including risk score, age, advanced FIGO stage, and high-grade disease. \textbf{E,} Pathway enrichment of model-associated immune programs. \textbf{F,} LASSO-Cox cross-validation curve. \textbf{G,} Time-dependent ROC curve for exploratory internal model assessment. \textbf{H,} Calibration summaries by risk-score quintile at 1, 3, and 5 years.}\label{fig9}
+\end{figure}
+
+
+
+\subsection{scTenifoldKnk and CellOracle prioritize regulatory nodes of the TLS/mregDC antigen-presentation program}
+
+We then used scTenifoldKnk and CellOracle analyses to prioritize candidate regulators of the mregDC program (Figure~\ref{fig10}). scTenifoldKnk virtual knockout was completed for ITGAX, LAMP3, CCR7, and CD74 using the public 10x scFFPE matrix. CD74 was retained as the antigen-presentation/MHC-II proxy because exact HLA-DRA/HLA genes were absent from the matrix. CCR7 virtual knockout produced a prominent network-shift signal, and KO-sensitive target summaries highlighted marker and regulatory genes affected by the tested perturbations.
+
+CellOracle 0.20.0 prioritized TF-level perturbations among NF-$\kappa$B/antigen-presentation-associated regulators. IRF8, SPI1, STAT1, IRF1, and NFKB1 showed prominent shifts in IF-core or antigen-presentation proxy summaries, and cross-method integration ranked IRF8 and SPI1 among high-priority regulators across CellOracle and patient-level virtual-KO estimates. Marker-level virtual knockout was therefore handled by scTenifoldKnk, whereas CellOracle estimated upstream transcription-factor perturbation effects on downstream marker and antigen-presentation/MHC-II response modules. These computational results nominate experimentally testable regulators and should not be interpreted as direct mechanistic proof.
+
+
+\begin{figure}[H]
+\centering
+\begin{adjustwidth}{-\extralength}{0cm}
+\centering
+\includegraphics[width=0.92\fulllength]{Fig10.pdf}
+\end{adjustwidth}
+\vspace{-3pt}
+\caption{\textbf{scTenifoldKnk and CellOracle prioritize candidate regulatory nodes of the TLS/mregDC program.} \textbf{A,} CellOracle TF-level perturbation heatmap across TLS, mregDC, AP/MHC-II-proxy, IF-core, and NF-$\kappa$B-associated programs. \textbf{B,} scTenifoldKnk virtual-knockout distance curves for CCR7, CD74, ITGAX, and LAMP3. \textbf{C,} Perturbation-burden ranking based on mean absolute program delta. \textbf{D,} IF-core mean-delta summary for prioritized regulators. \textbf{E,} AP-proxy mean-delta summary for prioritized regulators. \textbf{F,} Regulator-by-program perturbation matrix. \textbf{G,} Regulator-shift scatter for IF-core-associated perturbation effects. \textbf{H,} Regulator-shift scatter for AP-proxy-associated perturbation effects. \textbf{I,} KO-sensitive target ranking from marker/proxy virtual perturbation. \textbf{J,} Mean absolute target-shift summary. \textbf{K,} Target-suppression summary for prioritized regulatory nodes.}\label{fig10}
+\end{figure}
+
+
+
+\subsection{Drug-prioritization and Vina redocking nominate testable perturbation axes}
+
+To connect perturbation-prioritized regulators to translational hypotheses, we built a drug-prioritization layer around targetable regulator classes (Figure~\ref{fig11}). Integrated TLS/mregDC perturbation scores prioritized IRF8 and SPI1, whereas RELA/RELB/NFKB2/NFKB1 mapped to IKK/NF-$\kappa$B-related classes and STAT1/STAT3 mapped to JAK/STAT-related classes. The virtual-screening rank favored JAK-inhibitor candidates for predicted high-risk signature reversal, while proteasome-related candidates had lower predicted reversal scores in the current model.
+
+Vina redocking completed three non-covalent receptor-ligand pairs: ruxolitinib--JAK2, baricitinib--JAK2, and carfilzomib--PSMB5. Bortezomib and ixazomib pairs were marked Vina-ineligible under the current non-covalent Vina setup because boronate chemistry is not adequately handled by standard atom typing. These results should be used to prioritize compounds or target classes for experimental testing, not to infer drug efficacy.
+
+
+
+
+
+
+
+
+\begin{figure}[H]
+\centering
+\begin{adjustwidth}{-\extralength}{0cm}
+\centering
+\includegraphics[width=0.92\fulllength]{Fig11.pdf}
+\end{adjustwidth}
+\caption{\textbf{Drug-prioritization and Vina redocking nominate testable perturbation axes.} \textbf{A,} Compound-by-axis heatmap integrating target class, JAK/STAT, NF-$\kappa$B, TLS-axis, mregDC-axis, AP/MHC-II-axis, and docking-related features. \textbf{B,} Integrated priority ranking of candidate compounds. \textbf{C,} Docking-score and integrated-priority relationship. \textbf{D,} Candidate ranking by clinical/axis component score. \textbf{E,} Total-score ranking. \textbf{F,} Predicted risk-reversal component. \textbf{G,} TLS-suppression component. \textbf{H,} Axis-suppression component. \textbf{I,} IF-suppression component. \textbf{J,} AP-suppression component. \textbf{K,} Docking-priority component. All drug and docking results are interpreted as computational prioritization for future experimental testing.}\label{fig11}
+\end{figure}
+
+\section{Discussion}
+This study reframes the OVC mregDC finding as a spatial association between an operational TLS program and a $LAMP3^{+}CCR7^{+}$ mature migratory DC state rather than as a single-marker observation. Across single-cell analysis, representative four-marker immunofluorescence, Xenium segmentation, multi-sample spatial support, TLS-distance gradients, immune deconvolution, patient-level modeling, in silico perturbation, and drug prioritization, the $LAMP3^{+}CCR7^{+}$ dendritic-cell state showed features consistent with mature migratory mregDCs and localized to operational TLS-score-defined regions. The most important conceptual shift is that the spatial evidence is not limited to co-localization: TLS-field segmentation and distance-gradient analyses support a model in which TLS-positive regions contain or border mregDC/AP-enriched fields with antigen-presentation/MHC-II proxy and interferon-associated programs. Immune-richness-adjusted analyses further support a non-redundant mregDC/AP component at patient and spatial-spot levels. At single-cell resolution, however, residual mregDC--TLS coupling in the Xenium section was negligible after adjustment (partial $\rho=-0.025$), indicating that the cell-level TLS association is largely attributable to local immune-program richness; the field model should therefore be read as a program-level spatial association rather than as a proven discrete cellular niche.
+
+The single-cell results are consistent with prior reports that canonical cDC1 and cDC2 populations can acquire $LAMP3^{+}$ regulatory/migratory DC programs in tumors\cite{bib17,bib18,bib20,bib21}. However, the trajectory panels remain state-relationship analyses and should not be interpreted as definitive lineage conversion or a causal maturation sequence. Similarly, the IF panel provides representative tissue-image support for regional co-occurrence of CD11C, HLA-DRA, LAMP3, and CCR7 staining consistent with a TLS-in/near mregDC-associated population, but single-cell four-marker co-positivity was not quantified and TLS identity itself was assigned from transcriptomic and spatial TLS programs. This separation is important because histological TLS maturation would ideally require additional B-cell follicle, T-cell zone, FDC/germinal-center, and HEV markers beyond the four-marker mregDC IF panel.
+
+The revised interpretation is aligned with recent TLS literature. The pan-cancer spatial TLS atlas in Science showed that TLS biology is better captured by maturation state, spatial location, distance-dependent tumor/immune gradients, and maturation-aware composite metrics than by binary TLS presence alone\cite{bib118}. The same atlas provides an important boundary for OVC interpretation: TLSs were limited in the OVCA spatial-transcriptomic subset, whereas the HGSOC H\&E therapy cohort contained many segmented TLSs and showed directionally favorable associations between mature TLS composition and treatment response\cite{bib118}. Our spatial figures therefore treat TLS-field segmentation, TLS/mregDC/AP co-localization, multi-sample spatial support, and TLS-distance gradients as the core spatial evidence in TLS-positive OVC regions rather than as evidence that TLSs are uniformly abundant across OVC. The ovarian-cancer TLS review and integrated tumor-associated TLS spatial profiling further support using B-cell, T-cell, FDC/germinal-center, HEV/stromal, chemokine, interferon, and antigen-presentation modules rather than relying on a single marker or chemokine score\cite{bib119,bib122}. A 2025 mature-TLS study linked mature TLSs with intratumoral T- and B-cell responses, consistent with a productive immune niche model, whereas spatial tryptophan-metabolism analysis cautions that TLS-rich fields can remain functionally constrained when local metabolic programs restrict TLS maturation\cite{bib120,bib121}. Accordingly, the claims here are deliberately framed around a TLS-associated mregDC/AP-proxy program and its immune-prognostic context, not around definitive histological TLS staging or therapeutic efficacy.
+
+This framework also clarifies the biological relationship between mregDCs and TLSs. TLSs are multicellular tissue structures requiring organized B-cell, T-cell, FDC/germinal-center, stromal/HEV, chemokine, and antigen-presentation components, whereas mregDCs represent a mature migratory APC state that may participate in, border, or reflect these immune fields. Therefore, a CD11C/HLA-DRA/LAMP3/CCR7 mregDC/AP panel cannot replace histological TLS assessment. It could, however, become a simpler pathology triage layer: mregDC-positive APC fields may identify sections that should undergo full TLS staging, additional B/T/FDC/GC/HEV staining, or spatial profiling. This distinction is clinically important because mregDC programs can carry both antigen-presentation and regulatory features, including checkpoint and Treg-associated axes, and should not be interpreted as uniformly beneficial without context\cite{bib75,bib99,bib104,bib110}.
+
+The translational implication is that the mregDC/TLS axis may help select, monitor, and rationally combine immunotherapies rather than serving as a stand-alone treatment target at this stage. DC vaccines have already been explored in ovarian cancer, but durable benefit has been limited by antigen selection, DC maturation state, immune suppression, and lack of robust tissue biomarkers\cite{bib69}. A TLS-associated mregDC/AP readout could help identify patients with pre-existing local antigen-presentation niches, monitor whether vaccination or chemo-antiangiogenic treatment expands mature APC/TLS programs, and guide combinations with checkpoint blockade, anti-VEGF therapy, or stromal/metabolic remodeling. Engineered DC or CAR-DC strategies are conceptually attractive because they could combine tumor targeting, antigen presentation, cytokine delivery, and T-cell priming, and recent engineered-myeloid and CAR-DC work supports this direction preclinically\cite{bib103,bib124}. For OVC, however, this remains a future experimental path: the current data nominate mregDC/TLS-associated biology as a biomarker and perturbation-prioritization framework, not as evidence that DC vaccines or CAR-DC products are clinically ready for this indication.
+
+The patient-level analyses connect the spatial program to a broader immune contexture. Ten-method deconvolution indicated that TLS/mregDC-score-high tumors were associated with B/plasma, myeloid/APC, T-cell, cytotoxic/NK, and global immune-infiltration programs, while the composite patient-level score and LASSO-Cox analyses provided exploratory outcome stratification. These findings are compatible with the coexistence of organized immune infiltration and immune-regulatory restraint in OVC\cite{bib90,bib91,bib94,bib95,bib103,bib105,bib106,bib107,bib108}. The adjusted analyses reduce, but do not eliminate, the concern that the TLS/mregDC/AP signal reflects global immune infiltration. The strongest adjusted support was observed for mregDC--TLS and mregDC--AP/MHC-II coupling at the TCGA and multi-sample spot levels, whereas the Xenium cell-level analysis mainly preserved mregDC--AP/MHC-II coupling. Therefore, the field model is best interpreted as a spatially organized immune-program association that requires additional raw-channel IF, histological TLS staging, and functional perturbation for definitive validation. The exploratory risk score remained associated with outcome in an age/stage/grade sensitivity Cox model, although stage and grade were not independently significant in this TCGA-OV sensitivity cohort and residual disease was too sparsely recorded in the GDC clinical fields for adjustment. Because the prognostic model was derived and internally assessed in TCGA-OV, it should be treated as an exploratory immune-prognostic feature set rather than as a deployable clinical test.
+
+The perturbation and drug-prioritization layers should be read as hypothesis prioritization. scTenifoldKnk tested marker/proxy network disruption after virtual knockout of ITGAX, LAMP3, CCR7, and CD74, whereas CellOracle prioritized upstream transcription factors, including IRF8, SPI1, STAT1, IRF1, and NFKB1, in a TF-level perturbation framework. The drug-prioritization layer in Figure~\ref{fig11} then connects these regulators to targetable classes and docking feasibility, but it does not provide pharmacological validation. In particular, docking scores and virtual-screening ranks nominate compounds and target classes for future testing; they do not establish efficacy, mechanism, or clinical utility.
+
+Several limitations frame the interpretation of this study. The representative IF layer included one case and one ROI per cancer type and was reviewed on merged flattened images, so it supports qualitative-to-illustrative tissue-image detection but not a cross-cancer statistical comparison, per-mm$^{2}$ tissue-density measurement, or raw-channel single-cell co-localization assay. The scRNA-seq analysis identifies a small transcript-defined $LAMP3^{+}CCR7^{+}$ DC state, whereas the IF fields were selected immune-enriched representative regions and should not be interpreted as whole-tissue mregDC abundance. The public Xenium and scFFPE transcriptomic matrices did not contain exact HLA-DRA/HLA-family genes, so public-data analyses support antigen-presentation/MHC-II proxy signals rather than direct HLA-DRA expression. TLS assignment was operational and based on a 12-chemokine module, a patient-level 29-gene TLS imprint, expression-overlap spatial TLS-imprint support, and spatial co-localization rather than full histological staging of TLS maturation. Immune-richness-adjusted partial correlations were added as confounding audits, but they cannot substitute for prospective multiplex tissue cohorts, raw-channel co-localization statistics, or perturbation experiments. The bulk and survival analyses were retrospective, and the computational perturbation and drug-prioritization analyses require functional validation. Overall, the manuscript provides a multimodal, hypothesis-generating framework for future functional, spatial, and translational studies of the mregDC/TLS axis in OVC.
+
+\section{Conclusions}
+Overall, our multimodal analyses support a spatial association between a $LAMP3^{+}CCR7^{+}$ mregDC program and operational TLS-score-defined regions with antigen-presentation/MHC-II proxy support in TLS-positive OVC regions. The integrated single-cell, representative IF, Xenium, multi-sample spatial, distance-gradient, immune-deconvolution, immune-richness-adjusted, patient-level modeling, scTenifoldKnk, CellOracle, virtual-screening, and docking-audit data are consistent with a spatially organized mature migratory DC program and nominate NF-$\kappa$B/antigen-presentation-associated regulatory, biomarker, vaccine-monitoring, and drug-testing axes for future validation.
+
+\supplementary{The following supporting information is available online: Supplementary Information, Supplementary Figure S1, Supplementary Figure S2, Supplementary Figure S3, Supplementary Figure S4, Supplementary Figure S5, Supplementary Figure S6; Supplementary Table S1, scRNA-seq GEO sources; Supplementary Table S2, signature definitions and gene coverage; Supplementary Table S3, spatial and 10x dataset accessions. Source Data for main and supplementary figures are provided as a separate archive and in the public repository.}
+
+\authorcontributions{Feifan Lu and Ting Zhang contributed equally to this work and share first authorship. Feifan Lu conceived the study, developed the methodology, performed the experiments, and drafted the manuscript. Ting Zhang analyzed the data, validated the results, and critically revised the manuscript. Zhixuan Li and Renqi Yao contributed to experimental design, data interpretation, and technical support. Hao Hu contributed to pathological diagnosis, clinical data analysis, and histopathological review. Rui Guan and Mingjuan Xu supervised the study, acquired funding, and finalized the manuscript. All authors have read and agreed to the published version of the manuscript.}
+
+\funding{This work was supported by the Foundation of Changhai Hospital (No. 2020YXK024). The APC funding source will be confirmed during submission.}
+
+\institutionalreview{The use of human clinical specimens in this study was approved by the Ethics Committee of Changhai Hospital, Naval Medical University (approval No. CHEC 2023-011). Analyses of publicly available GEO, TCGA, GTEx, 10x Genomics, and public spatial transcriptomic datasets used de-identified data and were conducted in accordance with the relevant database policies and journal requirements.}
+
+\informedconsent{Written informed consent was obtained from all participants who contributed clinical specimens.}
+
+\dataavailability{The public scRNA-seq datasets analyzed in this study are available from GEO under accession numbers GSE197461, GSE208653, and GSE173682. The multi-sample spatial analysis used one 10x Visium ovarian FFPE dataset and GEO spatial datasets GSE211956, GSE224335, GSE274657, and GSE288483, with per-sample identifiers listed in Supplementary Table S3. The public 10x Genomics scFFPE ovarian cancer matrix and Xenium Prime FFPE human ovarian cancer dataset are available from 10x Genomics. TCGA-OV RNA-seq and clinical data were retrieved from the Genomic Data Commons, and normal-tissue reference data were retrieved from GTEx. Derived source-data tables for Figs. 1--11 and Supplementary Figs. S1--S6 are included in the accompanying Source Data archive where table output was generated and are mapped in \texttt{SOURCE\_DATA\_INDEX.csv}. Analysis scripts, source-data mapping files, and reproducibility materials are archived at Zenodo (\url{https://doi.org/10.5281/zenodo.20523737}) and available at GitHub (\url{https://github.com/Luciky-Leo/Luciky-Leo-mregdc-tls-ov}).}
+
+\acknowledgments{The authors thank GEO, TCGA, GTEx, 10x Genomics, and the investigators who generated the public datasets re-analyzed in this study. The authors also thank the patients who contributed clinical specimens to this study.}
+
+\conflictsofinterest{The authors declare no conflicts of interest. The funder had no role in the design of the study; in the collection, analyses, or interpretation of data; in the writing of the manuscript; or in the decision to publish the results.}
+
+\abbreviations{Abbreviations}{
+        The following abbreviations are used in this manuscript:
+        \\
+
+        \noindent
+        \begin{tabular}{@{}ll}
+        APCs & antigen-presenting cells\\
+AUC & area under the curve\\
+CAFs & cancer-associated fibroblasts\\
+CCR7 & C-C motif chemokine receptor 7\\
+CEAD & cervical adenocarcinoma\\
+CESC & cervical squamous cell carcinoma\\
+CTLA4 & cytotoxic T lymphocyte associated protein 4\\
+DCs & dendritic cells\\
+FFPE & formalin-fixed paraffin-embedded\\
+GEO & Gene Expression Omnibus\\
+GRN & gene-regulatory network\\
+H\&E & hematoxylin and eosin staining\\
+HR & hazard ratio\\
+IF & immunofluorescence\\
+IKK & inhibitor of nuclear factor kappa-B kinase\\
+JAK & Janus kinase\\
+ML & machine learning\\
+mregDCs & mature dendritic cells enriched in immunoregulatory molecules\\
+NF-$\kappa$B & nuclear factor kappa-light-chain-enhancer of activated B cells\\
+OVC & ovarian cancer\\
+PDB & Protein Data Bank\\
+PD-L1 & programmed cell death ligand 1\\
+PSMB5 & proteasome 20S subunit beta 5\\
+scRNA-seq & single-cell RNA sequencing\\
+TF & transcription factor\\
+TAMs & tumor-associated macrophages\\
+TCGA & The Cancer Genome Atlas\\
+TIDE & Tumor Immune Dysfunction and Exclusion\\
+TLSs & tertiary lymphoid structures\\
+TNF & tumor necrosis factor\\
+TSA & tyramide signal amplification\\
+UCEC & uterine corpus endometrial carcinoma\\
+UMAP & uniform manifold approximation and projection\\
+        \end{tabular}
+        }
+
+\reftitle{References}
+\bibliography{cancers-bibliography}
+
+\PublishersNote{}
+\end{document}

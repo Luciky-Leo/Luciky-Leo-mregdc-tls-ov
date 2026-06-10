@@ -1,6 +1,6 @@
 ﻿component,scope,relative_or_project_path,status,notes
-manuscript_package_build,LaTeX package assembly,code/build_jtm_submission_package.py,included,Builds the JTM Springer Nature package and copies figures/source data.
-figure_upload_compression,review-upload figure compression,code/create_jtm_compressed_figures.py,included,Creates <10 MB review/upload figure PDFs without overwriting production figures.
+manuscript_package_build,LaTeX package assembly,code/build_jtm_submission_package.py,included,Legacy Springer Nature assembly script retained for provenance; current Cancers manuscript files are provided under manuscript/.
+figure_upload_compression,review-upload figure compression,code/create_jtm_compressed_figures.py,included,Legacy review-upload figure compression script retained for provenance; current Cancers figure PDFs are provided under figures_for_review/.
 tcga_ov_clinical_fetch,GDC clinical covariate retrieval,code/fetch_tcga_ov_clinical_for_adjusted_cox.py,included,Fetches TCGA-OV age/stage/grade/residual-disease fields from the GDC API and merges them with the Fig9 model cohort.
 adjusted_cox_sensitivity,age/stage/grade Cox sensitivity,code/run_adjusted_cox_sensitivity.R,included,Runs risk-score-only and age/stage/grade-adjusted Cox sensitivity models; residual disease is audited but excluded because of sparse reporting.
 supplementary_table_s3,public spatial and 10x dataset accessions,code/make_supplementary_table_s3_dataset_accessions.py,included,Builds Supplementary Table S3 from the 23-sample spatial source table and public 10x dataset metadata.
