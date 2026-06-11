@@ -41,7 +41,7 @@
 
 | URL | Status | Code | Note |
 |---|---|---:|---|
-| https://doi.org/10.5281/zenodo.20523737 | PASS | 200 | URL resolved. |
+| https://doi.org/10.5281/zenodo.20636617 | PASS | 200 | URL resolved. |
 | https://github.com/Luciky-Leo/Luciky-Leo-mregdc-tls-ov | PASS | 200 | URL resolved. |
 
 ## Submission Gate
