@@ -1,0 +1,35 @@
+{
+  "script_scope": "generates submitted Fig. 2 marker/program summaries from deposited source data",
+  "n_cells": 17553,
+  "n_IF_core_high_cells": 1755,
+  "fraction_IF_core_high": 0.099983,
+  "marker_fields_available": [
+    "ITGAX",
+    "LAMP3",
+    "CCR7",
+    "CD74",
+    "B2M",
+    "TAP1",
+    "TAP2",
+    "CIITA",
+    "NLRC5",
+    "PSMB8",
+    "PSMB9",
+    "CD40",
+    "CD274",
+    "CCL17",
+    "CLEC9A",
+    "CD1C"
+  ],
+  "top_markers_by_IF_core_difference": [
+    "ITGAX",
+    "CD74",
+    "CIITA",
+    "B2M",
+    "TAP1"
+  ],
+  "input_files": [
+    "source_data/Fig02_scRNA_mregDC_program/scRNA_cell_marker_feature_matrix.tsv",
+    "source_data/Fig02_scRNA_mregDC_program/scRNA_linear_SVM_marker_weights.tsv"
+  ]
+}

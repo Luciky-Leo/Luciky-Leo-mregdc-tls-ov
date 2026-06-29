@@ -1,0 +1,26 @@
+{
+  "script_scope": "generates submitted Fig. 1 cohort and provenance summaries from deposited source data",
+  "n_samples": 22,
+  "n_accessions": 3,
+  "disease_counts": {
+    "CEAD/ADC": 6,
+    "CESC/CSCC": 5,
+    "OVC": 5,
+    "UCEC/EC": 6
+  },
+  "accession_counts": {
+    "GSE173682": 11,
+    "GSE197461": 8,
+    "GSE208653": 3
+  },
+  "input_files": [
+    "source_data/Fig01_study_design_scRNA_reference/Source_Data_Table_S1_scRNA_GEO_sample_manifest.csv",
+    "source_data/Fig01_study_design_scRNA_reference/Source_Data_Table_S1_scRNA_GEO_accession_summary.csv",
+    "source_data/Fig01_study_design_scRNA_reference/Source_Data_Table_S1_scRNA_GEO_disease_summary.csv"
+  ],
+  "source_rows": {
+    "sample_manifest": 22,
+    "accession_summary": 6,
+    "disease_summary": 4
+  }
+}

@@ -8,13 +8,17 @@ preparation and are retained for provenance. The current manuscript, figure,
 supplementary, and source-data files in this release correspond to the Cancers
 submission version.
 
-Reviewer-facing code provenance is summarized in `CODE_INVENTORY_FOR_REVIEW.csv`.
+Reviewer-facing code scope is summarized in `CODE_INVENTORY_FOR_REVIEW.csv`.
 
 The current repository includes the manuscript-build and figure-compression
 scripts, the TCGA-OV GDC clinical-covariate fetch script, the adjusted Cox
 sensitivity script, and the Supplementary Table S3 dataset-accession script.
 Figure-level source-data files are provided under `../source_data/` and mapped
 to current manuscript figure numbers in `../source_data/SOURCE_DATA_INDEX.csv`.
+For the R1 revision, Fig. 1 and Fig. 2 analysis scripts were added
+(`fig1_scRNA_reference.py` and `fig2_mregDC_program.py`). These scripts generate
+cohort, marker/program, and classifier-weight summaries for reviewer checking
+from deposited source-data tables.
 Additional upstream analysis scripts used to derive the single-cell, spatial,
 immune-deconvolution, perturbation, prognostic-model, and docking source tables
 are available from the corresponding authors on reasonable request.

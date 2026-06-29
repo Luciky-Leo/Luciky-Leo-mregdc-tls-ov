@@ -1,4 +1,4 @@
-# MregDC-TLS ovarian cancer reproducibility package
+# MregDC-TLS ovarian cancer code and source-data package
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20523737.svg)](https://doi.org/10.5281/zenodo.20523737)
 
@@ -24,8 +24,8 @@ It contains:
 - `code/`: package-building, figure-compression, TCGA-OV clinical-covariate
   retrieval, adjusted Cox sensitivity analysis, and Supplementary Table S3
   accession scripts. For the R1 revision, this folder also includes a
-  figure-panel-to-source-data map and a runnable validation script for every
-  main figure panel group.
+  figure-panel-to-source-data map, a runnable validation script for every
+  main figure panel group, and Fig. 1/Fig. 2 analysis scripts.
 - `source_data/`: current-numbering source-data folders for Fig. 1-Fig. 11 and
   Supplementary Figures S1-S6.
 - `source_data/SOURCE_DATA_INDEX.csv`: primary figure-to-source-data map. Use
@@ -60,8 +60,10 @@ and require experimental validation.
 | Source-data index | `source_data/SOURCE_DATA_INDEX.csv` |
 | Code inventory | `code/CODE_INVENTORY_FOR_REVIEW.csv` |
 | Main figure panel/source map | `code/figure_panel_script_source_map_repo.csv` |
-| Main figure source validation script | `code/reproduce_main_figure_panel_sources.py` |
+| Main figure source validation script | `code/validate_main_figure_panel_sources.py` |
 | Main figure source validation report | `code/output/panel_source_validation_report.csv` |
+| Fig. 1 analysis script | `code/fig1_scRNA_reference.py` |
+| Fig. 2 analysis script | `code/fig2_mregDC_program.py` |
 | R1 IF raw-channel availability audit | `docs/IF_CHANNEL_AVAILABILITY_AUDIT.md` |
 | R1 added-analysis pre-specification | `docs/R1_ADDED_ANALYSIS_PRESPEC.md` |
 | Cancers manuscript LaTeX | `manuscript/manuscript_cancers_mdpi.tex` |
@@ -70,7 +72,7 @@ and require experimental validation.
 | Supplementary information | `supplementary/Supplementary_Information.pdf` |
 | Dataset accession table | `source_data/Tables_signature_and_GEO/Supplementary_Table_S3_spatial_and_10x_dataset_accessions.xlsx` |
 
-## Reproducibility notes
+## Code and source-data notes
 
 The local analysis environment used for final package assembly followed the
 E-drive research environment policy:
@@ -89,11 +91,15 @@ sensitivity/source-data scripts. Full raw-data reruns may require public data
 downloads and method-specific local environments as described in the manuscript
 methods and source-data notes.
 
+Fig. 1 and Fig. 2 include analysis scripts that generate the submitted cohort,
+marker/program, and classifier-weight summaries from deposited source-data
+tables.
+
 To validate the R1 main figure panel/source-data map after downloading this
 repository:
 
 ```bash
-python code/reproduce_main_figure_panel_sources.py \
+python code/validate_main_figure_panel_sources.py \
   --project-root . \
   --map code/figure_panel_script_source_map_repo.csv \
   --out code/output/panel_source_validation_report.csv
