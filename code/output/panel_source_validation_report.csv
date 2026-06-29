@@ -1,0 +1,48 @@
+figure,panel,claim_scope,source_file,status,bytes,table_rows_or_json_items,table_columns
+Fig1,A-G,study design and scRNA cohort provenance,source_data/Fig01_study_design_scRNA_reference/Source_Data_Table_S1_scRNA_GEO_sample_manifest.csv,exists,8092,22,11
+Fig1,A-G,study design and scRNA cohort provenance,source_data/Fig01_study_design_scRNA_reference/Source_Data_Table_S1_scRNA_GEO_accession_summary.csv,exists,1269,6,6
+Fig1,A-G,study design and scRNA cohort provenance,source_data/Fig01_study_design_scRNA_reference/Source_Data_Table_S1_scRNA_GEO_disease_summary.csv,exists,238,4,3
+Fig2,A-H,scRNA mregDC marker and program source tables,source_data/Fig02_scRNA_mregDC_program/scRNA_cell_marker_feature_matrix.tsv,exists,2134126,17553,20
+Fig2,A-H,scRNA mregDC marker and program source tables,source_data/Fig02_scRNA_mregDC_program/scRNA_linear_SVM_marker_weights.tsv,exists,652,17,3
+Fig3,A-F,representative merged-image IF raw illustrative ROI counts only,source_data/Fig03_representative_IF_raw_counts/Fig03_IF_ROI_raw_counts.csv,exists,2095,4,13
+Fig3,A-F,representative merged-image IF raw illustrative ROI counts only,source_data/Fig03_representative_IF_raw_counts/Fig03_IF_raw_count_summary.csv,exists,774,8,3
+Fig4,A-F,Xenium TLS-field and mregDC/AP-proxy spatial segmentation source data,source_data/Fig04_Xenium_spatial_segmentation/xenium_tls_program_scores_map_downsample.csv,exists,27983322,149723,10
+Fig4,A-F,Xenium TLS-field and mregDC/AP-proxy spatial segmentation source data,source_data/Fig04_Xenium_spatial_segmentation/xenium_tls_field_segmentation_summary.json,exists,316,5,
+Fig4,A-F,Xenium TLS-field and mregDC/AP-proxy spatial segmentation source data,source_data/Fig04_Xenium_spatial_segmentation/xenium_tls_field_object_metrics.csv,exists,230297,733,20
+Fig4,A-F,Xenium TLS-field and mregDC/AP-proxy spatial segmentation source data,source_data/Fig04_Xenium_spatial_segmentation/xenium_tls_field_grid_connected_components.csv,exists,274286,3642,9
+Fig4,A-F,Xenium TLS-field and mregDC/AP-proxy spatial segmentation source data,source_data/Fig04_Xenium_spatial_segmentation/xenium_program_gene_availability.csv,exists,770,11,5
+Fig5,A-F,multi-sample spatial coupling and marker availability,source_data/Fig05_multi_sample_spatial_coupling/multi_sample_spatial_extended_sample_metrics_long.csv,exists,13031,138,7
+Fig5,A-F,multi-sample spatial coupling and marker availability,source_data/Fig05_multi_sample_spatial_coupling/multi_sample_spatial_extended_dataset_metric_summary.csv,exists,3259,30,7
+Fig5,A-F,multi-sample spatial coupling and marker availability,source_data/Fig05_multi_sample_spatial_coupling/multi_sample_spatial_extended_selected_map_samples.csv,exists,723,5,8
+Fig5,A-F,multi-sample spatial coupling and marker availability,source_data/Fig05_multi_sample_spatial_coupling/multi_sample_spatial_extended_selected_map_spot_scores.csv,exists,5039104,11507,37
+Fig5,A-F,multi-sample spatial coupling and marker availability,source_data/Fig05_multi_sample_spatial_coupling/multi_sample_spatial_extended_selected_map_cohigh_overlay.csv,exists,1211404,14215,6
+Fig5,A-F,multi-sample spatial coupling and marker availability,source_data/Fig05_multi_sample_spatial_coupling/multi_sample_spatial_extended_exact_marker_availability.csv,exists,5347,69,7
+Fig6,A-H,TLS decile and distance-gradient source data,source_data/Fig06_TLS_distance_gradient/multi_sample_spatial_extended_tls_decile_summary.csv,exists,30483,230,10
+Fig6,A-H,TLS decile and distance-gradient source data,source_data/Fig06_TLS_distance_gradient/multi_sample_spatial_extended_tls_decile_long.csv,exists,80205,1150,5
+Fig6,A-H,TLS decile and distance-gradient source data,source_data/Fig06_TLS_distance_gradient/multi_sample_spatial_extended_spot_scatter_downsample.csv,exists,16164111,41867,35
+Fig6,A-H,TLS decile and distance-gradient source data,source_data/Fig06_TLS_distance_gradient/xenium_distance_to_tls_field_program_gradients.csv,exists,9617,63,9
+Fig7,A-H,ten-method immune deconvolution source data,source_data/Fig07_ten_method_immune_deconvolution/Fig07_immune_raw_with_TIMER_ABIS.tsv,exists,1686604,4270,159
+Fig7,A-H,ten-method immune deconvolution source data,source_data/Fig07_ten_method_immune_deconvolution/Fig07_immune_correlations_with_TIMER_ABIS.tsv,exists,575768,6975,10
+Fig7,A-H,ten-method immune deconvolution source data,source_data/Fig07_ten_method_immune_deconvolution/Fig07_immune_10method_status_TIMER_ABIS.tsv,exists,402,10,5
+Fig7,A-H,ten-method immune deconvolution source data,source_data/Fig07_ten_method_immune_deconvolution/Fig07_CH_immune_method_atlas_source_matrix.csv,exists,3850,29,7
+Fig7,A-H,ten-method immune deconvolution source data,source_data/Fig07_ten_method_immune_deconvolution/Fig07_CH_immune_method_atlas_TIMER_ABIS_source_matrix.csv,exists,4333,32,7
+Fig7,A-H,ten-method immune deconvolution source data,source_data/Fig07_ten_method_immune_deconvolution/tcga_iobr_10method_raw.tsv,exists,2149927,3416,136
+Fig7,A-H,ten-method immune deconvolution source data,source_data/Fig07_ten_method_immune_deconvolution/tcga_iobr_10method_correlations_with_IFcore.tsv,exists,20185,157,9
+Fig7,A-H,ten-method immune deconvolution source data,source_data/Fig07_ten_method_immune_deconvolution/tcga_iobr_10method_status.tsv,exists,368,10,5
+Fig8,A-H,patient-level composite and risk-score source data,source_data/Fig08_patient_level_composite/Fig08_CH_patient_feature_atlas_source_matrix.csv,exists,98837,13,428
+Fig8,A-H,patient-level composite and risk-score source data,source_data/Fig08_patient_level_composite/tcga_tls_patient_features.tsv,exists,512347,427,71
+Fig8,A-H,patient-level composite and risk-score source data,source_data/Fig08_patient_level_composite/tcga_tls_risk_scores.tsv,exists,112710,426,17
+Fig9,A-H,exploratory LASSO-Cox and internal validation source data,source_data/Fig09_LASSO_Cox_internal_validation/tcga_tls_lasso_selected_features.tsv,exists,243,6,2
+Fig9,A-H,exploratory LASSO-Cox and internal validation source data,source_data/Fig09_LASSO_Cox_internal_validation/Source_Data_Survival_LASSO_CV_curve.csv,exists,7320,50,8
+Fig9,A-H,exploratory LASSO-Cox and internal validation source data,source_data/Fig09_LASSO_Cox_internal_validation/Source_Data_Survival_LASSO_lambda_min_coefficients.csv,exists,263,6,2
+Fig9,A-H,exploratory LASSO-Cox and internal validation source data,source_data/Fig09_LASSO_Cox_internal_validation/Source_Data_Survival_time_dependent_ROC_AUC.csv,exists,132,3,3
+Fig9,A-H,exploratory LASSO-Cox and internal validation source data,source_data/Fig09_LASSO_Cox_internal_validation/Source_Data_Survival_time_dependent_ROC_curve.csv,exists,87010,1281,5
+Fig9,A-H,exploratory LASSO-Cox and internal validation source data,source_data/Fig09_LASSO_Cox_internal_validation/Source_Data_Survival_calibration_by_quintile.csv,exists,1511,15,8
+Fig9,A-H,exploratory LASSO-Cox and internal validation source data,source_data/Fig09_LASSO_Cox_internal_validation/source_model_input_patients.csv,exists,64700,426,10
+Fig9,A-H,exploratory LASSO-Cox and internal validation source data,source_data/Fig09_LASSO_Cox_internal_validation/source_model_input_patients_with_gdc_clinical.csv,exists,111735,426,23
+Fig9,A-H,exploratory LASSO-Cox and internal validation source data,source_data/Fig09_LASSO_Cox_internal_validation/Source_Data_Survival_adjusted_Cox_sensitivity.csv,exists,866,5,9
+Fig9,A-H,exploratory LASSO-Cox and internal validation source data,source_data/Fig09_LASSO_Cox_internal_validation/Source_Data_Survival_adjusted_Cox_covariate_coverage.csv,exists,478,6,5
+Fig10,A-K,scTenifoldKnk and CellOracle virtual perturbation source data,source_data/Fig10_virtual_perturbation/Fig10_CH_virtual_perturbation_matrix_source_matrix.csv,exists,2062,20,6
+Fig10,A-K,scTenifoldKnk and CellOracle virtual perturbation source data,source_data/Fig10_virtual_perturbation/Source_Data_CellOracle_TF_perturbation_summary.tsv,exists,939,12,4
+Fig10,A-K,scTenifoldKnk and CellOracle virtual perturbation source data,source_data/Fig10_virtual_perturbation/Source_Data_CellOracle_target_gene_shifts.tsv,exists,4145,120,3
+Fig11,A-K,computational drug prioritization and docking-audit source data,source_data/Fig11_drug_prioritization_docking/Fig11_CH_drug_vulnerability_matrix_source_matrix.csv,exists,2290,12,10

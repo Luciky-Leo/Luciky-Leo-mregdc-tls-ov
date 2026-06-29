@@ -1,8 +1,8 @@
 # Submission Precheck Report
 
 - Status: `PASS`
-- Manuscript: `/mnt/e/Reserch/MregDC_Cancers_20260609/05_upload_package_clean_20260610/manuscript_cancers_mdpi.tex`
-- Package: `/mnt/e/Reserch/MregDC_Cancers_20260609/05_upload_package_clean_20260610`
+- Manuscript: `/mnt/e/Reserch/MregDC_Cancers_R1_Revision_20260629/01_manuscript_revision/manuscript_cancers_mdpi.tex`
+- Package: `/mnt/e/Reserch/MregDC_Cancers_R1_Revision_20260629/01_manuscript_revision`
 - URL check: `enabled`
 
 ## Detected Package Items

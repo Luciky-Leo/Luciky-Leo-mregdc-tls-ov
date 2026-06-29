@@ -11,5 +11,10 @@ multi_sample_spatial,23-sample spatial extension,E:/Reserch/MregDC/analysis_rebu
 fig5_8_original_r_panels,early Fig5-Fig8 source panels and QC,E:/Reserch/MregDC/analysis_rebuild_20260520/11_main_fig5_8_R_20260523,available_locally,Contains QC tables for immune, patient, and perturbation panels.
 celloracle_full_method,CellOracle environment and outputs,E:/Reserch/MregDC/analysis_rebuild_20260520/16_full_method_integration_20260527,available_locally,Method-specific environment and outputs retained locally; public repository DOI still needed.
 public_repository,public archival code URL,https://github.com/Luciky-Leo/Luciky-Leo-mregdc-tls-ov and https://doi.org/10.5281/zenodo.20523737,complete,Public GitHub repository and Zenodo DOI for the reviewer-facing reproducibility package.
+main_figure_panel_source_map,R1 figure-panel to script/source-data map,code/figure_panel_script_source_map_repo.csv,included,Maps every main figure panel group to a runnable validation script and deposited source-data file(s).
+main_figure_source_validation,R1 panel source-data validation script,code/reproduce_main_figure_panel_sources.py,included,Validates that every mapped source-data table used for main figure panel support exists in the reviewer-facing repository.
+main_figure_source_validation_report,R1 validation output,code/output/panel_source_validation_report.csv,included,Machine-readable output from reproduce_main_figure_panel_sources.py; all 47 mapped source-file checks are expected to return exists.
+if_channel_availability_audit,R1 IF raw-channel gate,docs/IF_CHANNEL_AVAILABILITY_AUDIT.md,included,Documents the Gate A audit showing that raw separated IF channel stacks were not available for formal Pearson/Manders co-localization analysis.
+r1_added_analysis_prespec,R1 added-analysis pre-specification,docs/R1_ADDED_ANALYSIS_PRESPEC.md,included,Pre-specifies the inavolisib/PIK3CA and organ-origin analyses and records the data-availability fallback to avoid unsupported testing.
 
 

@@ -23,7 +23,9 @@ It contains:
 
 - `code/`: package-building, figure-compression, TCGA-OV clinical-covariate
   retrieval, adjusted Cox sensitivity analysis, and Supplementary Table S3
-  accession scripts.
+  accession scripts. For the R1 revision, this folder also includes a
+  figure-panel-to-source-data map and a runnable validation script for every
+  main figure panel group.
 - `source_data/`: current-numbering source-data folders for Fig. 1-Fig. 11 and
   Supplementary Figures S1-S6.
 - `source_data/SOURCE_DATA_INDEX.csv`: primary figure-to-source-data map. Use
@@ -57,6 +59,11 @@ and require experimental validation.
 |---|---|
 | Source-data index | `source_data/SOURCE_DATA_INDEX.csv` |
 | Code inventory | `code/CODE_INVENTORY_FOR_REVIEW.csv` |
+| Main figure panel/source map | `code/figure_panel_script_source_map_repo.csv` |
+| Main figure source validation script | `code/reproduce_main_figure_panel_sources.py` |
+| Main figure source validation report | `code/output/panel_source_validation_report.csv` |
+| R1 IF raw-channel availability audit | `docs/IF_CHANNEL_AVAILABILITY_AUDIT.md` |
+| R1 added-analysis pre-specification | `docs/R1_ADDED_ANALYSIS_PRESPEC.md` |
 | Cancers manuscript LaTeX | `manuscript/manuscript_cancers_mdpi.tex` |
 | Cancers compiled PDF | `manuscript/manuscript_cancers_mdpi.pdf` |
 | Review figures | `figures_for_review/Fig1.pdf` through `Fig11.pdf` |
@@ -81,6 +88,19 @@ The public code folder is scoped to reviewer-facing package construction and
 sensitivity/source-data scripts. Full raw-data reruns may require public data
 downloads and method-specific local environments as described in the manuscript
 methods and source-data notes.
+
+To validate the R1 main figure panel/source-data map after downloading this
+repository:
+
+```bash
+python code/reproduce_main_figure_panel_sources.py \
+  --project-root . \
+  --map code/figure_panel_script_source_map_repo.csv \
+  --out code/output/panel_source_validation_report.csv
+```
+
+The expected validation output contains 47 source-file checks with status
+`exists`.
 
 ## Suggested citation
 
