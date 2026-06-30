@@ -27,15 +27,15 @@
 | figure | 9 | PASS | 1 | 3 | Explicit body-text placement citation found. |
 | figure | 10 | PASS | 1 | 3 | Explicit body-text placement citation found. |
 | figure | 11 | PASS | 3 | 5 | Explicit body-text placement citation found. |
-| supp_figure | 1 | PASS | 1 | 1 | Explicit body-text placement citation found. |
-| supp_figure | 2 | PASS | 1 | 1 | Explicit body-text placement citation found. |
-| supp_figure | 3 | PASS | 1 | 1 | Explicit body-text placement citation found. |
-| supp_figure | 4 | PASS | 1 | 1 | Explicit body-text placement citation found. |
-| supp_figure | 5 | PASS | 1 | 1 | Explicit body-text placement citation found. |
-| supp_figure | 6 | PASS | 1 | 1 | Explicit body-text placement citation found. |
-| supp_table | 1 | PASS | 1 | 1 | Explicit body-text placement citation found. |
+| supp_figure | 1 | PASS | 2 | 2 | Explicit body-text placement citation found. |
+| supp_figure | 2 | PASS | 2 | 2 | Explicit body-text placement citation found. |
+| supp_figure | 3 | PASS | 2 | 2 | Explicit body-text placement citation found. |
+| supp_figure | 4 | PASS | 2 | 2 | Explicit body-text placement citation found. |
+| supp_figure | 5 | PASS | 2 | 2 | Explicit body-text placement citation found. |
+| supp_figure | 6 | PASS | 2 | 2 | Explicit body-text placement citation found. |
+| supp_table | 1 | PASS | 2 | 2 | Explicit body-text placement citation found. |
 | supp_table | 2 | PASS | 4 | 4 | Explicit body-text placement citation found. |
-| supp_table | 3 | PASS | 2 | 2 | Explicit body-text placement citation found. |
+| supp_table | 3 | PASS | 3 | 3 | Explicit body-text placement citation found. |
 
 ## URL/DOI Checks
 
