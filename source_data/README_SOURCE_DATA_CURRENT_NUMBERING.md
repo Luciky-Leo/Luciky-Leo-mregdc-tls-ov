@@ -1,8 +1,8 @@
-# Source Data Current Numbering
+﻿# Source Data Current Numbering
 
 This folder provides a current-numbering entry point for the target-journal submission manuscript.
 
-The legacy source-data folders are retained for traceability because several files were generated before the final figure renumbering. Reviewers should start from `SOURCE_DATA_INDEX.csv`, which maps the submitted Fig. 1-Fig. 11 and Supplementary Fig. S1-S6 to the current source-data folders.
+The legacy source-data folders are retained for traceability because several files were generated before the final figure renumbering. Reviewers should start from `SOURCE_DATA_INDEX.csv`, which maps the submitted Fig. 1-Fig. 10 and Supplementary Fig. S1-S7 to the current source-data folders.
 
 Important interpretation notes:
 

@@ -178,7 +178,7 @@ SUPP_TEX = rf"""\documentclass[pdflatex,sn-vancouver-num]{{sn-jnl}}
 \item Fig. S4: \texttt{{SourceData\_S4\_multi\_sample\_spatial}}.
 \item Fig. S5: \texttt{{SourceData\_S5\_model\_validation}}.
 \item Fig. S6: \texttt{{SourceData\_S6\_specificity}}.
-\item Signature definitions and gene-coverage audits are provided in Supplementary Table S2 and SourceData S15.
+\item Signature definitions and gene-coverage audits are provided in Supplementary Table S2 and the current source-data table directory.
 \end{{itemize}}
 
 \section*{{Supplementary Tables}}
@@ -287,13 +287,13 @@ def main() -> None:
         f"Target journal: Journal of Translational Medicine.\n\n"
         f"Main manuscript: `manuscript_jtm_springer_nature.tex`.\n\n"
         f"Supplementary information: `supplementary/Supplementary_Information_jtm_springer_nature.tex`.\n\n"
-        f"Main figures: `figures/Fig1.pdf` through `figures/Fig11.pdf`.\n\n"
+        f"Main figures: `figures/Fig1.pdf` through `figures/Fig10.pdf`.\n\n"
         f"Supplementary figures: `supplementary/FigureS1_*` through `supplementary/FigureS6_*`.\n\n"
         "Editorial changes made for JTM:\n\n"
         "- Migrated from the Scientific Reports class to the Springer Nature `sn-jnl.cls` template.\n"
         "- Reframed the title, abstract, and declarations toward translational immuno-oncology.\n"
-        "- Kept the user-confirmed main figure layout with Fig1-Fig11 in the main text.\n"
-        "- Retained Supplementary Figs. S1-S6 only.\n"
+        "- Kept the user-confirmed main figure layout with Fig1-Fig10 in the main text.\n"
+        "- Retained Supplementary Figs. S1-S7.\n"
         "- Removed duplicate acknowledgement headings.\n"
         "- Replaced environment-specific wording such as local Windows/R execution with manuscript-appropriate methods language.\n"
         "- Moved declarations into BMC/Springer Nature-compatible declaration subsections.\n\n"

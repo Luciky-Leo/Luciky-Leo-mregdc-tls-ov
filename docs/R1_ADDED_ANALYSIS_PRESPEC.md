@@ -35,11 +35,11 @@ as a simple predictor.
 
 Available current source data:
 
-- `source_data/Fig11_drug_prioritization_docking/Fig11_CH_drug_vulnerability_matrix_source_matrix.csv`
+- `source_data/FigS07_drug_prioritization_docking/FigS07_CH_drug_vulnerability_matrix_source_matrix.csv`
 
 Audit finding:
 
-- The deposited Fig. 11 source matrix contains virtual prioritization component
+- The deposited Supplementary Fig. S7 source matrix contains virtual prioritization component
   scores, but not per-cell-line IC50 values, PIK3CA mutation annotations, or
   GDSC/DepMap sample identifiers.
 
@@ -101,4 +101,3 @@ If no cell-to-sample mapping is recovered:
 Before final submission, use past tense only for changes that exist in the
 revised manuscript, source-data archive, and public repository. Until then, keep
 working drafts marked as pre-edit drafts.
-

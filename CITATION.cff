@@ -12,7 +12,9 @@ authors:
   - family-names: Xu
     given-names: Mingjuan
 year: 2026
+version: "v1.1.3"
+date-released: "2026-07-03"
 license: MIT
 repository-code: "https://github.com/Luciky-Leo/Luciky-Leo-mregdc-tls-ov"
 doi: "10.5281/zenodo.21026437"
-abstract: "Reviewer-facing code, manuscript source, figure, and source-data package for a Cancers submission version studying TLS-associated LAMP3+CCR7+ mregDC antigen-presentation programs in ovarian cancer."
+abstract: "Reviewer-facing code, manuscript source, figure, supplementary-figure production exports, and source-data package for a Cancers R1 submission version studying TLS-associated LAMP3+CCR7+ mregDC antigen-presentation programs in ovarian cancer."

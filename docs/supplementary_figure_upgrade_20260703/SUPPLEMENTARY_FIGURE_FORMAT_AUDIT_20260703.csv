@@ -1,0 +1,8 @@
+figure,pdf_width_mm,pdf_height_mm,pdf_exists,svg_exists,tiff_exists,upload_file
+S1,180.0,78.0,True,True,True,FigureS1_singleCellHaystack.png
+S2,180.0,78.0,True,True,True,FigureS2_Hotspot.png
+S3,180.0,188.0,True,True,True,FigureS3_Xenium_spatial_maps-re.pdf
+S4,180.0,105.0,True,True,True,FigureS4_multi_sample_spatial_validation.png
+S5,180.0,75.0,True,True,True,FigureS5_model_validation.png
+S6,180.0,62.0,True,True,True,FigureS6_specificity_adjusted_associations.png
+S7,179.9,145.0,True,True,True,Supplementary_Figure_S7_drug_prioritization.pdf

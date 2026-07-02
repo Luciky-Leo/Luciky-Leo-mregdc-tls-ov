@@ -26,15 +26,16 @@ It contains:
   accession scripts. For the R1 revision, this folder also includes a
   figure-panel-to-source-data map, a runnable validation script for every
   main figure panel group, and Fig. 1/Fig. 2 analysis scripts.
-- `source_data/`: current-numbering source-data folders for Fig. 1-Fig. 11 and
-  Supplementary Figures S1-S6.
+- `source_data/`: current-numbering source-data folders for Fig. 1-Fig. 10 and
+  Supplementary Figures S1-S7.
 - `source_data/SOURCE_DATA_INDEX.csv`: primary figure-to-source-data map. Use
   this file first.
 - `manuscript/`: Cancers/MDPI LaTeX source, bibliography, MDPI support files,
   compiled PDF, and submission precheck report.
-- `figures_for_review/`: review/upload figure PDFs for Fig. 1-Fig. 11.
+- `figures_for_review/`: review/upload figure PDFs for Fig. 1-Fig. 10.
 - `supplementary/`: supplementary information PDF, supplementary figures, and
-  supplementary tables.
+  supplementary tables. The R1 supplementary-figure production export archive
+  includes PDF, SVG, and TIFF versions of Supplementary Figures S1-S7.
 
 Large raw public datasets are not redistributed here. Dataset identifiers,
 URLs, and version notes are provided in:
@@ -64,12 +65,15 @@ and require experimental validation.
 | Main figure source validation report | `code/output/panel_source_validation_report.csv` |
 | Fig. 1 analysis script | `code/fig1_scRNA_reference.py` |
 | Fig. 2 analysis script | `code/fig2_mregDC_program.py` |
+| Supplementary figure redraw scripts | `code/supplementary_figure_upgrade_20260703/` |
+| Supplementary figure QC reports | `docs/supplementary_figure_upgrade_20260703/` |
 | R1 IF raw-channel availability audit | `docs/IF_CHANNEL_AVAILABILITY_AUDIT.md` |
 | R1 added-analysis pre-specification | `docs/R1_ADDED_ANALYSIS_PRESPEC.md` |
 | Cancers manuscript LaTeX | `manuscript/manuscript_cancers_mdpi.tex` |
 | Cancers compiled PDF | `manuscript/manuscript_cancers_mdpi.pdf` |
-| Review figures | `figures_for_review/Fig1.pdf` through `Fig11.pdf` |
+| Review figures | `figures_for_review/Fig1.pdf` through `Fig10.pdf` |
 | Supplementary information | `supplementary/Supplementary_Information.pdf` |
+| Supplementary figure production exports | `supplementary/CNS_ready_supplementary_production_exports.zip` |
 | Dataset accession table | `source_data/Tables_signature_and_GEO/Supplementary_Table_S3_spatial_and_10x_dataset_accessions.xlsx` |
 
 ## Code and source-data notes
@@ -105,7 +109,7 @@ python code/validate_main_figure_panel_sources.py \
   --out code/output/panel_source_validation_report.csv
 ```
 
-The expected validation output contains 47 source-file checks with status
+The expected validation output contains 46 source-file checks with status
 `exists`.
 
 ## Suggested citation

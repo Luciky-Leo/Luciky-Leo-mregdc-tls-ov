@@ -1,13 +1,13 @@
 # Submission Precheck Report
 
 - Status: `PASS`
-- Manuscript: `/mnt/e/Reserch/MregDC_Cancers_R1_Revision_20260629/01_manuscript_revision/manuscript_cancers_mdpi.tex`
-- Package: `/mnt/e/Reserch/MregDC_Cancers_R1_Revision_20260629/01_manuscript_revision`
-- URL check: `enabled`
+- Manuscript: `/mnt/e/Reserch/MregDC_Cancers_R1_Revision_20260629/07_submission_package_R1/latex_source_clean/manuscript_cancers_mdpi.tex`
+- Package: `/mnt/e/Reserch/MregDC_Cancers_R1_Revision_20260629/07_submission_package_R1/latex_source_clean`
+- URL check: `disabled`
 
 ## Detected Package Items
 
-- Figures: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
+- Figures: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 - Tables: none
 - Supplementary figures: none
 - Supplementary tables: none
@@ -16,33 +16,13 @@
 
 | Kind | Number | Status | Body hits | All hits | Note |
 |---|---:|---|---:|---:|---|
-| figure | 1 | PASS | 1 | 3 | Explicit body-text placement citation found. |
-| figure | 2 | PASS | 1 | 3 | Explicit body-text placement citation found. |
-| figure | 3 | PASS | 2 | 4 | Explicit body-text placement citation found. |
-| figure | 4 | PASS | 3 | 5 | Explicit body-text placement citation found. |
-| figure | 5 | PASS | 1 | 3 | Explicit body-text placement citation found. |
-| figure | 6 | PASS | 2 | 4 | Explicit body-text placement citation found. |
-| figure | 7 | PASS | 1 | 3 | Explicit body-text placement citation found. |
-| figure | 8 | PASS | 1 | 3 | Explicit body-text placement citation found. |
-| figure | 9 | PASS | 1 | 3 | Explicit body-text placement citation found. |
 | figure | 10 | PASS | 1 | 3 | Explicit body-text placement citation found. |
-| figure | 11 | PASS | 3 | 5 | Explicit body-text placement citation found. |
-| supp_figure | 1 | PASS | 2 | 2 | Explicit body-text placement citation found. |
-| supp_figure | 2 | PASS | 2 | 2 | Explicit body-text placement citation found. |
-| supp_figure | 3 | PASS | 2 | 2 | Explicit body-text placement citation found. |
-| supp_figure | 4 | PASS | 2 | 2 | Explicit body-text placement citation found. |
-| supp_figure | 5 | PASS | 2 | 2 | Explicit body-text placement citation found. |
-| supp_figure | 6 | PASS | 2 | 2 | Explicit body-text placement citation found. |
-| supp_table | 1 | PASS | 2 | 2 | Explicit body-text placement citation found. |
-| supp_table | 2 | PASS | 4 | 4 | Explicit body-text placement citation found. |
+| supp_figure | 7 | PASS | 5 | 5 | Explicit body-text placement citation found. |
 | supp_table | 3 | PASS | 3 | 3 | Explicit body-text placement citation found. |
 
 ## URL/DOI Checks
 
-| URL | Status | Code | Note |
-|---|---|---:|---|
-| https://doi.org/10.5281/zenodo.21026437 | PASS | 200 | URL resolved. |
-| https://github.com/Luciky-Leo/Luciky-Leo-mregdc-tls-ov | PASS | 200 | URL resolved. |
+No URLs checked.
 
 ## Submission Gate
 
