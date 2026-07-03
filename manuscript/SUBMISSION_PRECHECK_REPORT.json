@@ -1,0 +1,48 @@
+{
+  "manuscript": "/mnt/e/Reserch/MregDC_Cancers_R1_Revision_20260629/07_submission_package_R1/latex_source_clean/manuscript_cancers_mdpi.tex",
+  "package": "/mnt/e/Reserch/MregDC_Cancers_R1_Revision_20260629/07_submission_package_R1/latex_source_clean",
+  "items": [
+    {
+      "kind": "figure",
+      "number": "10",
+      "status": "PASS",
+      "body_hits": 1,
+      "all_hits": 3,
+      "note": "Explicit body-text placement citation found."
+    },
+    {
+      "kind": "supp_figure",
+      "number": "7",
+      "status": "PASS",
+      "body_hits": 5,
+      "all_hits": 5,
+      "note": "Explicit body-text placement citation found."
+    },
+    {
+      "kind": "supp_table",
+      "number": "3",
+      "status": "PASS",
+      "body_hits": 3,
+      "all_hits": 3,
+      "note": "Explicit body-text placement citation found."
+    }
+  ],
+  "links": [],
+  "detected": {
+    "figure": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "table": [],
+    "supp_figure": [],
+    "supp_table": []
+  }
+}

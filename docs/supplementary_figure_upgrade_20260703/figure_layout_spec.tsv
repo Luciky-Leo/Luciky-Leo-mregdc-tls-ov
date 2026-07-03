@@ -1,0 +1,15 @@
+figure	width_mm	height_mm	panel_count	layout	output_prefix	render_runtime
+FigureS1	180	125	4	2x2	FigureS1_singleCellHaystack	Python/research-py312
+FigureS2	180	125	4	2x2	FigureS2_Hotspot	Python/research-py312
+FigureS3	180	125	4	2x2	FigureS3_spatial_core	Python/research-py312
+FigureS4	180	140	4	A spans top row with five uniformly normalized spatial map slots; B-D bottom row	FigureS4_multi_sample_spatial_validation	Python/research-py312
+FigureS5	180	125	4	2x2	FigureS5_model_validation	Python/research-py312
+FigureS6	180	125	4	2x2	FigureS6_specificity_adjusted_associations	Python/research-py312
+FigureS7	180	125	4	2x2	Supplementary_Figure_S7_drug_prioritization	Python/research-py312
+FigureS8	180	132	4	2x2	FigureS8_scRNA_IF_support	Python/research-py312
+FigureS9	180	125	4	2x2	FigureS9_Xenium_program_maps	Python/research-py312
+FigureS10	180	132	4	2x2	FigureS10_Xenium_TLS_fields	Python/research-py312
+FigureS11	180	125	4	2x2	FigureS11_TLS_distance_gradients	Python/research-py312
+FigureS12	180	125	4	2x2	FigureS12_immune_deconvolution	Python/research-py312
+FigureS13	180	125	4	2x2	FigureS13_patient_composite	Python/research-py312
+FigureS14	180	125	4	2x2	FigureS14_perturbation_extras	Python/research-py312

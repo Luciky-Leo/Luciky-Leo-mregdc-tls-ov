@@ -27,7 +27,7 @@ It contains:
   figure-panel-to-source-data map, a runnable validation script for every
   main figure panel group, and Fig. 1/Fig. 2 analysis scripts.
 - `source_data/`: current-numbering source-data folders for Fig. 1-Fig. 10 and
-  Supplementary Figures S1-S7.
+  Supplementary Figures S1-S14.
 - `source_data/SOURCE_DATA_INDEX.csv`: primary figure-to-source-data map. Use
   this file first.
 - `manuscript/`: Cancers/MDPI LaTeX source, bibliography, MDPI support files,
@@ -35,7 +35,7 @@ It contains:
 - `figures_for_review/`: review/upload figure PDFs for Fig. 1-Fig. 10.
 - `supplementary/`: supplementary information PDF, supplementary figures, and
   supplementary tables. The R1 supplementary-figure production export archive
-  includes PDF, SVG, and TIFF versions of Supplementary Figures S1-S7.
+  includes PDF, SVG, and PNG versions of Supplementary Figures S1-S14.
 
 Large raw public datasets are not redistributed here. Dataset identifiers,
 URLs, and version notes are provided in:

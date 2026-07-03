@@ -1,0 +1,24 @@
+# Panel Source Mapping
+
+| Figure | Data source | Plot task | Reference grammar | Runtime | Env | Input columns/objects | Script | Output |
+|---|---|---|---|---|---|---|---|---|
+| Fig. S1 | `FigS01_singleCellHaystack_audit` | ranked spatial non-random gene audit | ranked dot/scatter/heatmap/decay | Python | research-py312 | gene, D_KL, log.p.vals, log.p.adj | `scripts/redraw_supplementary_cns_v2.py` | `exports/FigureS1_singleCellHaystack.*` |
+| Fig. S2 | `FigS02_Hotspot_audit` | spatial autocorrelation audit | ranked dot/scatter/overlap/heatmap | Python | research-py312 | Gene, C, Z, Pval, FDR | `scripts/redraw_supplementary_cns_v2.py` | `exports/FigureS2_Hotspot.*` |
+| Fig. S3 | `FigS03_Xenium_spatial_maps`; `Fig04_Xenium_spatial_segmentation` | representative spatial score and co-high contour maps | Science TLS spatial-map and contour grammar | Python | research-py312 | x, y, TLS, mregDC, AP/MHC-II proxy, co-high flags | `scripts/redraw_supplementary_cns_v2.py` | `exports/FigureS3_spatial_core.*` |
+| Fig. S4 | `FigS04_multi_sample_spatial_source` | multi-sample spatial validation and gene coverage | small-multiple spatial maps plus metric heatmap | Python | research-py312 | dataset, sample_id, x, y, scores, co-high flags, coverage | `scripts/redraw_supplementary_cns_v2.py` | `exports/FigureS4_multi_sample_spatial_validation.*` |
+| Fig. S5 | `FigS05_model_validation`; `Fig09_LASSO_Cox_internal_validation` | LASSO/time-dependent ROC/calibration | clinical-model supplement grammar | Python | research-py312 | lambda, cvm, coefficients, ROC, calibration | `scripts/redraw_supplementary_cns_v2.py` | `exports/FigureS5_model_validation.*` |
+| Fig. S6 | `FigS06_specificity_adjustment` | raw/partial/adjusted association sensitivity | association audit and forest grammar | Python | research-py312 | raw_spearman_rho, partial_spearman_rho, beta, HC3 CI, controls | `scripts/redraw_supplementary_cns_v2.py` | `exports/FigureS6_specificity_adjusted_associations.*` |
+| Fig. S7 | `FigS07_drug_prioritization_docking` | computational drug-prioritization evidence dimensions | heatmap/ranking/scatter/box summary | Python | research-py312 | compound, target_class, evidence dimensions, docking | `scripts/redraw_supplementary_cns_v2.py` | `exports/Supplementary_Figure_S7_drug_prioritization.*` |
+| Fig. S8 | `Fig01_study_design_scRNA_reference`; `Fig02_scRNA_mregDC_program`; `Fig03_representative_IF_raw_counts` | scRNA sample support and representative IF raw counts | compact support panels | Python | research-py312 | disease, sample counts, marker weights, raw IF counts | `scripts/redraw_extra_unused_panels_s8_s14.py` | `exports/FigureS8_scRNA_IF_support.*` |
+| Fig. S9 | `Fig04_Xenium_spatial_segmentation` | Xenium program score maps | Science TLS spatial map grammar | Python | research-py312 | x, y, TLS_integrated, mregDC, AP_MHCII_proxy, IFN_response | `scripts/redraw_extra_unused_panels_s8_s14.py` | `exports/FigureS9_Xenium_program_maps.*` |
+| Fig. S10 | `Fig04_Xenium_spatial_segmentation` | TLS-field object segmentation, co-highness, and coverage | field object + compact heatmap grammar | Python | research-py312 | grid x/y, field_id, n_cells, cohigh_fraction, program coverage | `scripts/redraw_extra_unused_panels_s8_s14.py` | `exports/FigureS10_Xenium_TLS_fields.*` |
+| Fig. S11 | `Fig06_TLS_distance_gradient` | distance and TLS-decile gradients | pathway gradient / decile matrix grammar | Python | research-py312 | distance_um, TLS_decile, median program scores, co-high fractions | `scripts/redraw_extra_unused_panels_s8_s14.py` | `exports/FigureS11_TLS_distance_gradients.*` |
+| Fig. S12 | `Fig07_ten_method_immune_deconvolution` | ten-method immune-deconvolution support | method status / atlas / class summary grammar | Python | research-py312 | method, feature, rho, immune class, status | `scripts/redraw_extra_unused_panels_s8_s14.py` | `exports/FigureS12_immune_deconvolution.*` |
+| Fig. S13 | `Fig08_patient_level_composite` | patient-level composite/risk features | patient atlas, risk-shift, histogram, correlation | Python | research-py312 | patient_id, risk_group, feature scores, correlations | `scripts/redraw_extra_unused_panels_s8_s14.py` | `exports/FigureS13_patient_composite.*` |
+| Fig. S14 | `Fig10_virtual_perturbation` | virtual perturbation and CellOracle TF deltas | perturbation heatmap and target burden grammar | Python | research-py312 | TF, target_gene, delta, program, target-shift burden | `scripts/redraw_extra_unused_panels_s8_s14.py` | `exports/FigureS14_perturbation_extras.*` |
+
+## Source Boundary Notes
+
+- S8 IF data are representative raw counts only and are not analyzed as separated-channel Pearson/Manders colocalization.
+- S9-S11 AP/MHC-II values are proxy scores where exact HLA family genes are not present in the spatial panel.
+- S14 CellOracle-style results are TF-level perturbation summaries rather than direct LAMP3/CCR7 knockout experiments.

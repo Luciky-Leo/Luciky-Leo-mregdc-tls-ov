@@ -1,8 +1,8 @@
 # Submission Precheck Report
 
 - Status: `PASS`
-- Manuscript: `/mnt/e/Reserch/MregDC_Cancers_R1_Revision_20260629/07_submission_package_R1/latex_source_clean/manuscript_cancers_mdpi.tex`
-- Package: `/mnt/e/Reserch/MregDC_Cancers_R1_Revision_20260629/07_submission_package_R1/latex_source_clean`
+- Manuscript: `/mnt/e/Reserch/MregDC_Cancers_R1_Revision_20260629/07_submission_package_R1/latex_source_flat_upload_20260703/manuscript_cancers_mdpi.tex`
+- Package: `/mnt/e/Reserch/MregDC_Cancers_R1_Revision_20260629/07_submission_package_R1`
 - URL check: `disabled`
 
 ## Detected Package Items
@@ -16,8 +16,32 @@
 
 | Kind | Number | Status | Body hits | All hits | Note |
 |---|---:|---|---:|---:|---|
+| figure | 1 | PASS | 1 | 3 | Explicit body-text placement citation found. |
+| figure | 2 | PASS | 1 | 3 | Explicit body-text placement citation found. |
+| figure | 3 | PASS | 2 | 4 | Explicit body-text placement citation found. |
+| figure | 4 | PASS | 3 | 5 | Explicit body-text placement citation found. |
+| figure | 5 | PASS | 1 | 3 | Explicit body-text placement citation found. |
+| figure | 6 | PASS | 2 | 4 | Explicit body-text placement citation found. |
+| figure | 7 | PASS | 1 | 3 | Explicit body-text placement citation found. |
+| figure | 8 | PASS | 1 | 2 | Explicit body-text placement citation found. |
+| figure | 9 | PASS | 1 | 2 | Explicit body-text placement citation found. |
 | figure | 10 | PASS | 1 | 3 | Explicit body-text placement citation found. |
-| supp_figure | 7 | PASS | 5 | 5 | Explicit body-text placement citation found. |
+| supp_figure | 1 | PASS | 1 | 1 | Explicit body-text placement citation found. |
+| supp_figure | 2 | PASS | 1 | 1 | Explicit body-text placement citation found. |
+| supp_figure | 3 | PASS | 1 | 1 | Explicit body-text placement citation found. |
+| supp_figure | 4 | PASS | 1 | 1 | Explicit body-text placement citation found. |
+| supp_figure | 5 | PASS | 1 | 1 | Explicit body-text placement citation found. |
+| supp_figure | 6 | PASS | 1 | 1 | Explicit body-text placement citation found. |
+| supp_figure | 7 | PASS | 4 | 4 | Explicit body-text placement citation found. |
+| supp_figure | 8 | PASS | 1 | 1 | Explicit body-text placement citation found. |
+| supp_figure | 9 | PASS | 1 | 1 | Explicit body-text placement citation found. |
+| supp_figure | 10 | PASS | 1 | 1 | Explicit body-text placement citation found. |
+| supp_figure | 11 | PASS | 1 | 1 | Explicit body-text placement citation found. |
+| supp_figure | 12 | PASS | 1 | 1 | Explicit body-text placement citation found. |
+| supp_figure | 13 | PASS | 1 | 1 | Explicit body-text placement citation found. |
+| supp_figure | 14 | PASS | 1 | 1 | Explicit body-text placement citation found. |
+| supp_table | 1 | PASS | 2 | 2 | Explicit body-text placement citation found. |
+| supp_table | 2 | PASS | 4 | 4 | Explicit body-text placement citation found. |
 | supp_table | 3 | PASS | 3 | 3 | Explicit body-text placement citation found. |
 
 ## URL/DOI Checks

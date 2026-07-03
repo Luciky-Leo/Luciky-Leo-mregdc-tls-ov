@@ -1,0 +1,181 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=0.75in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue,
+  citecolor=black
+}
+
+\setlist[itemize]{leftmargin=1.3em,itemsep=0.15em,topsep=0.25em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.35em}
+\setlength{\emergencystretch}{3em}
+\sloppy
+\newcommand{\figpath}{author_adjusted_png}
+
+\begin{document}
+
+\begin{center}
+{\Large\bfseries Supplementary information}\\[0.4em]
+{\large Spatial association of TLS programs and LAMP3$^{+}$CCR7$^{+}$ mregDC states marks an immune-prognostic context in ovarian cancer}\\[1.0em]
+Feifan Lu$^{1}$, Ting Zhang$^{2}$, Rui Guan$^{1,*}$, Mingjuan Xu$^{1,*}$\\[0.5em]
+$^{1}$Department of Obstetrics and Gynecology, Changhai Hospital, Naval Medical University, Shanghai 200433, China.\\
+$^{2}$Department of Hematology, Shanghai East Hospital, Tongji University, Shanghai 200120, China.\\[0.3em]
+$^{*}$Corresponding authors: \href{mailto:cngreen785@163.com}{cngreen785@163.com}; \href{mailto:mingjuanxu@smmu.edu.cn}{mingjuanxu@smmu.edu.cn}
+\end{center}
+
+\section*{Supplementary Figure Legends}
+
+\subsection*{Supplementary Figure S1. singleCellHaystack spatial non-randomness audit}
+\includegraphics[width=\textwidth]{\figpath/Supplementary_Figure_S1.png}
+\textbf{A,} Top spatially non-random genes ranked by singleCellHaystack evidence in the Xenium-derived spatial subset.
+\textbf{B,} Concordance between D\_KL and statistical evidence for the ranked gene set.
+\textbf{C,} Metric matrix for the highest-evidence genes, showing D\_KL, nominal evidence, and adjusted evidence on a standardized scale.
+\textbf{D,} Ranked evidence-decay curve across the tested genes.
+
+\clearpage
+\subsection*{Supplementary Figure S2. Hotspot spatial-autocorrelation audit}
+\includegraphics[width=\textwidth]{\figpath/Supplementary_Figure_S2.png}
+\textbf{A,} Top Hotspot spatial-autocorrelation genes ranked by Hotspot Z score.
+\textbf{B,} Concordance between Hotspot C and Z statistics.
+\textbf{C,} Overlap between Hotspot and singleCellHaystack prioritized genes across increasing rank thresholds.
+\textbf{D,} Shared-gene evidence matrix comparing singleCellHaystack and Hotspot statistics.
+
+\clearpage
+\subsection*{Supplementary Figure S3. Representative spatial core of the TLS/mregDC/AP-proxy niche}
+\includegraphics[width=\textwidth]{\figpath/Supplementary_Figure_S3.png}
+\textbf{A,} TLS integrated score map in a representative spatial sample.
+\textbf{B,} mregDC-axis score map in the same coordinate system.
+\textbf{C,} AP/MHC-II proxy score map. This score uses available antigen-presentation and MHC-II-associated genes and should not be interpreted as direct HLA-DRA measurement when exact HLA genes are absent from the panel.
+\textbf{D,} TLS/mregDC co-high cells overlaid with smoothed TLS-field and mregDC-field contours.
+
+\clearpage
+\subsection*{Supplementary Figure S4. Multi-sample spatial validation and gene-coverage audit}
+\includegraphics[width=\textwidth]{\figpath/Supplementary_Figure_S4.png}
+\textbf{A,} Multi-sample spatial overlays showing co-high spots or cells across public ovarian spatial-transcriptomic datasets.
+\textbf{B,} Dataset-level support for core spatial metrics, including observed-versus-expected TLS/mregDC co-high enrichment and mregDC/TLS/AP-proxy associations.
+\textbf{C,} Sample-level observed-versus-expected co-high enrichment distribution.
+\textbf{D,} Gene-coverage fraction for the spatial signatures used in the multi-sample analysis.
+
+\clearpage
+\subsection*{Supplementary Figure S5. Internal patient-level model validation}
+\includegraphics[width=\textwidth]{\figpath/Supplementary_Figure_S5.png}
+\textbf{A,} LASSO cross-validation curve with the selected penalty.
+\textbf{B,} Non-zero coefficients at the selected lambda value.
+\textbf{C,} Time-dependent ROC curves for 1-, 3-, and 5-year survival in the internal TCGA-OV assessment.
+\textbf{D,} Calibration by predicted-risk quintile. These analyses support internal model behavior and do not replace external clinical validation.
+
+\clearpage
+\subsection*{Supplementary Figure S6. Immune-context-adjusted specificity analysis}
+\includegraphics[width=\textwidth]{\figpath/Supplementary_Figure_S6.png}
+\textbf{A,} Raw versus partial correlations for mregDC--TLS, mregDC--AP/MHC-II, and TLS--AP/MHC-II relationships.
+\textbf{B,} Adjusted-correlation matrix after immune-context and lineage controls.
+\textbf{C,} Adjusted regression support for the same relationships.
+\textbf{D,} Control-set and model-summary panel. This audit is intended to show bounded specificity, not to claim complete independence from immune abundance.
+
+\clearpage
+\subsection*{Supplementary Figure S7. Exploratory drug-prioritization layer}
+\includegraphics[width=\textwidth]{\figpath/Supplementary_Figure_S7.png}
+\textbf{A,} Compound-by-evidence matrix showing standardized support across target evidence, virtual screening, predicted program reversal, and docking layers.
+\textbf{B,} Integrated computational priority ranking.
+\textbf{C,} Relationship between target evidence and predicted program-reversal support.
+\textbf{D,} Priority distribution by target class. This figure is a hypothesis-generating computational screen and does not establish drug efficacy, pharmacologic response, or therapeutic applicability without experimental validation.
+
+\clearpage
+\subsection*{Supplementary Figure S8. scRNA-seq and representative IF support}
+\includegraphics[width=\textwidth]{\figpath/Supplementary_Figure_S8.png}
+\textbf{A,} Disease and sample support in the scRNA-seq reference.
+\textbf{B,} Marker weights contributing to the mregDC/AP program.
+\textbf{C,} Marker-score source summary for selected mregDC and antigen-presentation genes.
+\textbf{D,} Representative IF raw count summary displayed as log$_{10}$(count+1). The IF layer supports marker presence in representative gynecologic tumor images; it is not used to claim tissue-level cell density or separated-channel single-cell four-marker colocalization.
+
+\clearpage
+\subsection*{Supplementary Figure S9. Xenium program maps in a common spatial coordinate system}
+\includegraphics[width=\textwidth]{\figpath/Supplementary_Figure_S9.png}
+\textbf{A,} TLS integrated score map.
+\textbf{B,} mregDC program map.
+\textbf{C,} AP/MHC-II proxy map.
+\textbf{D,} IFN-response map. All panels use the same spatial coordinate system so that the relative spatial distribution of the programs can be compared.
+
+\clearpage
+\subsection*{Supplementary Figure S10. TLS-field segmentation and program coverage}
+\includegraphics[width=\textwidth]{\figpath/Supplementary_Figure_S10.png}
+\textbf{A,} Tissue-background map with TLS-field grid objects and co-high bins highlighted.
+\textbf{B,} Field size versus TLS/mregDC co-high fraction.
+\textbf{C,} Program matrix across the highest co-high TLS fields; neutral tiles denote zero-centred or no-variance readouts rather than missing data.
+\textbf{D,} Xenium panel gene coverage for the programs used in the spatial interpretation.
+
+\clearpage
+\subsection*{Supplementary Figure S11. TLS distance and decile gradients}
+\includegraphics[width=\textwidth]{\figpath/Supplementary_Figure_S11.png}
+\textbf{A,} Xenium distance gradients from TLS fields for TLS, mregDC, AP/MHC-II proxy, and IFN programs.
+\textbf{B,} Multi-sample TLS-score decile trends for mregDC, antigen-presentation/MHC-II proxy, and TLS programs.
+\textbf{C,} Co-high fractions across TLS score deciles.
+\textbf{D,} Decile readout matrix for AP-high, mregDC-high, and TLS/mregDC co-high signals; neutral tiles denote zero or near-zero median readouts rather than missing data. Wider uncertainty at distant bins should be interpreted cautiously.
+
+\clearpage
+\subsection*{Supplementary Figure S12. Ten-method immune-deconvolution context}
+\includegraphics[width=\textwidth]{\figpath/Supplementary_Figure_S12.png}
+\textbf{A,} Status summary for the ten immune-deconvolution methods included in the final immune-context layer.
+\textbf{B,} Immune-method atlas showing associations between selected immune readouts and the TLS/mregDC axis.
+\textbf{C,} Method-level IF-association summary, showing median and maximum absolute associations.
+\textbf{D,} Immune-class summary across methods. Method heterogeneity is expected and is interpreted as context rather than perfect algorithmic agreement.
+
+\clearpage
+\subsection*{Supplementary Figure S13. Patient-level composite feature structure}
+\includegraphics[width=\textwidth]{\figpath/Supplementary_Figure_S13.png}
+\textbf{A,} Patient-feature atlas subset for the TLS, mregDC, AP/MHC-II proxy, IFN, and NF-kB-related features.
+\textbf{B,} Risk-group shifts for selected program scores.
+\textbf{C,} Risk-score distribution by model-defined group.
+\textbf{D,} Patient-level correlation matrix across the composite features.
+
+\clearpage
+\subsection*{Supplementary Figure S14. Virtual perturbation support}
+\includegraphics[width=\textwidth]{\figpath/Supplementary_Figure_S14.png}
+\textbf{A,} Virtual perturbation matrix across regulatory targets and programs.
+\textbf{B,} CellOracle-style TF delta summary.
+\textbf{C,} Target-gene shift matrix.
+\textbf{D,} Target-shift burden summary. These results are TF/program-level computational perturbation analyses and should not be interpreted as direct LAMP3 or CCR7 knockout experiments.
+
+\clearpage
+\section*{Supplementary Tables}
+
+\paragraph{Supplementary Table S1.}
+Reconstructed 22-sample scRNA-seq GEO source manifest, disease labels, sample counts, and accession-level summaries.
+
+\paragraph{Supplementary Table S2.}
+Signature definitions, gene-coverage audits, marker-availability checks, and legacy-label harmonization for the mregDC, TLS, antigen-presentation/MHC-II, IFN, FDC/GC, HEV/stromal, proliferation, and EMT/invasion modules.
+
+\paragraph{Supplementary Table S3.}
+Public multi-sample spatial transcriptomic samples and public 10x/Xenium reference datasets used for spatial validation, including accession-level metadata and spot/cell counts where available.
+
+\section*{Supplementary Source Data}
+
+\begin{itemize}
+  \item Source-data index: \path{source_data/SOURCE_DATA_INDEX.csv}.
+  \item Fig. S1: \path{source_data/FigS01_singleCellHaystack_audit}.
+  \item Fig. S2: \path{source_data/FigS02_Hotspot_audit}.
+  \item Fig. S3: \path{source_data/FigS03_Xenium_spatial_maps} and \path{source_data/Fig04_Xenium_spatial_segmentation}.
+  \item Fig. S4: \path{source_data/FigS04_multi_sample_spatial_source}.
+  \item Fig. S5: \path{source_data/FigS05_model_validation} and \path{source_data/Fig09_LASSO_Cox_internal_validation}.
+  \item Fig. S6: \path{source_data/FigS06_specificity_adjustment}.
+  \item Fig. S7: \path{source_data/FigS07_drug_prioritization_docking}.
+  \item Fig. S8: \path{source_data/Fig01_study_design_scRNA_reference}, \path{source_data/Fig02_scRNA_mregDC_program}, and \path{source_data/Fig03_representative_IF_raw_counts}.
+  \item Fig. S9-S10: \path{source_data/Fig04_Xenium_spatial_segmentation}.
+  \item Fig. S11: \path{source_data/Fig06_TLS_distance_gradient}.
+  \item Fig. S12: \path{source_data/Fig07_ten_method_immune_deconvolution}.
+  \item Fig. S13: \path{source_data/Fig08_patient_level_composite}.
+  \item Fig. S14: \path{source_data/Fig10_virtual_perturbation}.
+\end{itemize}
+
+\end{document}

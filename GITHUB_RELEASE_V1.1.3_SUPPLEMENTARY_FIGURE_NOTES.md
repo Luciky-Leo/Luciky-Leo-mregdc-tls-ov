@@ -7,8 +7,8 @@ This release updates the reviewer-facing reproducibility archive for the Cancers
 - Synced the revised Cancers R1 manuscript source, compiled PDF, bibliography, and submission precheck report.
 - Updated review/upload figures to the current main-figure set, Fig. 1-Fig. 10.
 - Moved the exploratory drug-prioritization/docking material into Supplementary Figure S7 and removed the obsolete main Fig. 11 upload file.
-- Rebuilt Supplementary Figures S1-S7 in a unified production style and added a production export archive containing PDF, SVG, and TIFF versions.
-- Synced current source-data folders and `SOURCE_DATA_INDEX.csv` to the current numbering scheme, including `FigS07_drug_prioritization_docking`.
+- Rebuilt Supplementary Figures S1-S14 in a unified production style and added a production export archive containing PDF, SVG, and PNG versions.
+- Synced current source-data folders and `SOURCE_DATA_INDEX.csv` to the current numbering scheme, including Supplementary Figure S7 drug-prioritization source data.
 - Added the supplementary figure redraw scripts and QC reports under `code/supplementary_figure_upgrade_20260703/` and `docs/supplementary_figure_upgrade_20260703/`.
 
 ## Scope notes

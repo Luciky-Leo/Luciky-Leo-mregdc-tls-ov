@@ -20,7 +20,7 @@ fig2_mregDC_program_code,Fig2 analysis script,code/fig2_mregDC_program.py,includ
 fig2_mregDC_program_output,Fig2 analysis output,code/output/fig2_mregDC_program,included,Contains Fig2 marker summary and SVM-weight outputs from fig2_mregDC_program.py.
 if_channel_availability_audit,R1 IF raw-channel gate,docs/IF_CHANNEL_AVAILABILITY_AUDIT.md,included,Documents the Gate A audit showing that raw separated IF channel stacks were not available for formal Pearson/Manders co-localization analysis.
 r1_added_analysis_prespec,R1 added-analysis pre-specification,docs/R1_ADDED_ANALYSIS_PRESPEC.md,included,Pre-specifies the inavolisib/PIK3CA and organ-origin analyses and records the data-availability fallback to avoid unsupported testing.
-supplementary_figure_upgrade_scripts,S1-S7 supplementary figure redraw and export scripts,code/supplementary_figure_upgrade_20260703,included,Contains the scripts used to inventory current supplementary figures redraw the first six supplementary figures rebuild the S3 spatial-map layout redraw Supplementary Figure S7 and make the supplementary redraw contact sheet.
-supplementary_figure_upgrade_qc,S1-S7 supplementary figure QC reports,docs/supplementary_figure_upgrade_20260703,included,Contains the supplementary figure format audit redraw QC report and CNS-level supplementary figure audit for the R1 package.
+supplementary_figure_upgrade_scripts,S1-S14 supplementary figure redraw and export scripts,code/supplementary_figure_upgrade_20260703,included,Contains the Python scripts used to profile source data redraw Supplementary Figures S1-S14 and build the expanded supplementary redraw contact sheet.
+supplementary_figure_upgrade_qc,S1-S14 supplementary figure QC reports,docs/supplementary_figure_upgrade_20260703,included,Contains the supplementary figure contract source mapping output specification quality review signature review and expanded contact-sheet QC for the R1 package.
 
 
