@@ -22,6 +22,6 @@ This release archives the final pre-upload reproducibility package for the Cance
 
 Use the Zenodo concept DOI for the repository record:
 
-https://doi.org/10.5281/zenodo.21026437
+https://doi.org/10.5281/zenodo.21184531
 
 After GitHub release publication, Zenodo should mint a version-specific DOI for this release.

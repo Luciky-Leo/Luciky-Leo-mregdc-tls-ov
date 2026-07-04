@@ -1,6 +1,6 @@
 # MregDC-TLS ovarian cancer code and source-data package
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21026437.svg)](https://doi.org/10.5281/zenodo.21026437)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21184531.svg)](https://doi.org/10.5281/zenodo.21184531)
 
 This repository contains reviewer-facing code, source-data tables, manuscript
 source files, and compact figure files for the Cancers submission version of the
@@ -116,6 +116,6 @@ The expected validation output contains 46 source-file checks with status
 
 This repository is archived at Zenodo under the concept DOI:
 
-https://doi.org/10.5281/zenodo.21026437
+https://doi.org/10.5281/zenodo.21184531
 
 Cite the archived release together with the final published article.
